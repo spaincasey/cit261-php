@@ -1,0 +1,80 @@
+body {
+    background-color: #BCBEC5;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 8vh;
+}
+
+h2 {
+    text-align: center;
+    color: #373D51;
+    font-size: 5vh;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 5vh;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #BCBEC5;
+    color: white;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: left;
+}
+
+.header {
+    margin-bottom: 0;
+    background-color: #373D51;
+    height: 300px;   
+}
+
+.form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: left;
+    background-color: white;
+    padding: 3vh;
+}
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.display {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: left;
+    background-color: #373D51;
+    padding: 3vh;
+}
+
+.directory {
+
+}

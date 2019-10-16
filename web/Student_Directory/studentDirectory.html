@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <title>Student Directory</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hello World Assignment">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="studentDirectory.css">
+    <script type="text/javascript">
+    var data;
+    /********************************************************
+	* Sets focus, reads the txt document, resets form values
+	*********************************************************/
+    window.onload = function() {
+	  	document.getElementById("firstName").focus();
+	  	read();
+	  	resetValues();
+	}
+
+	/********************************************************
+	* Resets all the values in the form.
+	*********************************************************/
+	function resetValues() {
+		document.getElementById("newStudent").reset();
+	}
+
+	/********************************************************
+	* AJAX request to read the text file.
+	*********************************************************/
+	function read() {
+		//alert("in the read function");
+		document.getElementById("results");
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				data = this.responseText;
+				build(data);
+			}
+		};
+		xhttp.open("GET", "studentDirectory.txt" , true);
+		xhttp.send();
+		//alert("End of read function");
+	}
+
+	/********************************************************
+	* This function builds the table to display the schedule.
+	*********************************************************/
+	function build(data) {
+		var obj = JSON.parse(data);
+        //document.getElementById("test").innerHTML = obj;
+		var table = "<table><tr><th>First Name</th><th>Last Name</th><th>Student ID</th><th>GPA</th></tr>";
+		for(var i = 0; i < obj.students.length; i++)
+		{
+			table += "<tr><td>" + obj.students[i].firstName + "</td><td>" + obj.students[i].lastName + "</td><td>" + obj.students[i].studentId + "</td><td>" + obj.students[i].gpa + "</td></tr>";
+		}
+
+		document.getElementById("directory").innerHTML = table;
+	}
+
+	/********************************************************
+	* Write the new information to the file.
+	*********************************************************/
+	function writeFile() {
+        class Student {
+        constructor(firstName,lastName,studentId,gpa) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.studentId = studentId;
+            this.gpa = gpa;
+            }
+        }
+		// get all the variables from the form
+		var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+		var studentId = document.getElementById("studentId").value;
+        var gpa = document.getElementById("gpa").value;
+
+        var obj = new Student(firstName, lastName, studentId, gpa);
+
+		data = JSON.parse(data);
+		data.students.push(obj);
+
+		var solo = JSON.stringify(data);
+
+		// build the url for the AJAX request
+		var url = "studentDirectory.php?obj=" + solo;
+		console.log(url);
+
+		// AJAX Request
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				//document.getElementById("directory").innerHTML = this.responseText;
+                console.log(obj);
+			}
+		};
+		xhttp.open("GET", url , true);
+		xhttp.send();
+		// Read the table
+		read();
+	}   
+    </script>
+    <link rel="stylesheet" href="studentDirectory.css">
+</head>
+<body>
+    <div class="header">
+        <br><br><br>
+        <h1>Student Directory</h1>
+    </div>
+    <div class="form">
+        <h2>Add Student:</h2>
+        <form id="newStudent" onsubmit="writeFile()">
+            <div class="row">
+                <div class="column">
+                    First name:<br>
+                    <input type="text" id="firstName"><br>
+                    Last name:<br>
+                    <input type="text" id="lastName"><br>
+                </div>
+                <div class="column">
+                    Student id:<br>
+                    <input type="text" id="studentId"><br>
+                    GPA:<br>
+                    <input type="text" id="gpa"><br>
+                </div>
+            </div>
+            <br>
+            <input type="submit">
+            <button type="button" onclick="resetValues()" id="resetBtn">Clear Form</button>
+        </form>
+    </div>
+    <div class="display center">
+        <h3>Directory:</h3>
+        <p id="directory"></p>
+    </div>
+
+</body>
+</html>
