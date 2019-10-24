@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <title>JavaScript CSS</title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hello World Assignment">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="JavaScriptCSS.css"> -->
+    <style type="text/css">
+        body {
+         background-color: white;
+        }
+        
+    </style>
+    <script type="text/javascript">
+        function changeBackground() {
+            var sheet = document.createElement('style')
+            sheet.innerHTML = "div {border: 2px solid black; background-color: blue;}";
+            document.body.appendChild(sheet);
+        }
+
+        function changeBack() {
+            var sheet = document.createElement('style');
+            sheet.innerHTML = "div {border: None; background-color: white;}";
+            document.body.appendChild(sheet);
+        }
+
+        function changeFont() {
+            // document.styleSheets[0].addRule("p .myclass", "font-size: 120%");
+            document.styleSheets[0].insertRule("p{font-size: 20px;}", 0)
+        }
+
+        function changeBackground2() {
+            var stylesheet = document.styleSheets[0];
+            stylesheet.cssRules[0].style.backgroundColor="grey";
+        }
+
+        function changeBackground3() {
+            var stylesheet = document.styleSheets[0];
+            stylesheet.cssRules[0].style.backgroundColor="white";
+        }
+
+        // function getStyleSheet(unique_title) {
+        //     for(var i=0; i<document.styleSheets.length; i++) {
+        //         var sheet = document.styleSheets[i];
+        //         if(sheet.title == unique_title) {
+        //         return sheet;
+        //         }
+        //     }
+        // }
+
+        // stylesheet.insertRule(".have-border { border: 1px solid black;}", 0);
+    </script>
+    
+    <link rel="stylesheet" href="studentDirectory.css">
+</head>
+<body>
+    <p id="id1">Change the color of this paragraph.</p>
+    <button type="button"
+    onclick="document.getElementById('id1').style.color = 'red'">
+    Change to Red</button>
+    <button type="button"
+    onclick="document.getElementById('id1').style.color = 'black'">
+    Change to Black</button>
+    <div>
+        <p>Change the background</p>
+        <button type="button" onclick="changeBackground()">
+        Change the Background</button>
+        <button type="button" onclick="changeBack()">
+        Change Back</button>
+    </div>
+    
+    <p class="myclass">Change the Font Size of this paragraph.</p>
+    <button type="button" onclick="changeFont()">
+            Change Font Size</button>
+    <br><br>
+    <button type="button" onclick="changeBackground2()">
+            Change Overall Background</button>
+    <button type="button" onclick="changeBackground3()">
+            Change Back</button>
+</body>
+</html>
