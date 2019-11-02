@@ -44,6 +44,7 @@
 	}
 
     function build(data) {
+        console.log(data);
 		var obj = JSON.parse(data);
         for (var key in obj.results) {
             console.log("Key: " + key);
