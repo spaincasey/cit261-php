@@ -45,6 +45,10 @@
 
     function build(data) {
 		var obj = JSON.parse(data);
+        for (var key in obj.d) {
+            console.log("Key: " + key);
+            console.log("Value: " + obj.d[key]);
+        }
         document.getElementById("display").innerHTML = obj;
 		// var table = "<table><tr><th>First Name</th><th>Last Name</th><th>Student ID</th><th>GPA</th></tr>";
 		// for(var i = 0; i < obj.students.length; i++)
