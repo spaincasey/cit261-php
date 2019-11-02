@@ -30,6 +30,14 @@
 	  		xhttp.open("GET", "https://swapi.co/api/species/", true);
 	  		xhttp.send();
 	  		break;
+        case "starships":
+	  		xhttp.open("GET", "https://swapi.co/api/starships/", true);
+	  		xhttp.send();
+	  		break;
+	  	case "vehicles":
+	  		xhttp.open("GET", "https://swapi.co/api/vehicles/", true);
+	  		xhttp.send();
+	  		break;
 		}
 	}
 
@@ -72,7 +80,9 @@
   		<option value="people" selected>People</option>
 		<option value="planets">Planets</option>
 		<option value="films">Films</option>
-		<option value="species">Species</option>
+        <option value="species">Species</option>
+        <option value="starships">Starships</option>
+        <option value="vehicles">Vehicles</option>
 	</select>
   	<button type="button" onclick="loadDoc()">Change Content</button>
 </div>
