@@ -46,10 +46,10 @@
     function build(data) {
         console.log(data);
 		var obj = JSON.parse(data);
-        for (var key in obj.results) {
-            var item = key + ": " + obj.results[key];
+        for (var key in obj.results.d) {
+            var item = key + ": " + obj.results.d[key];
             console.log("Key: " + key);
-            console.log("Value: " + obj.results[key]);
+            console.log("Value: " + obj.results.d[key]);
             document.getElementById("display").innerHTML = item;
         }
         // document.getElementById("display").innerHTML = obj;
