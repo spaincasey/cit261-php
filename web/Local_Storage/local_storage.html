@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="page09.css"/>
+	<title>Casey Spain's Assign09</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+	function loadDoc() {
+		var country = document.getElementById("Country").value;
+	  	var xhttp = new XMLHttpRequest();
+	  	xhttp.onreadystatechange = function() {
+	    	if (this.readyState == 4 && this.status == 200) {
+	     		document.getElementById("display").innerHTML = this.responseText;
+	    	}
+	  	};
+	  	switch(country) {
+	  	case "usa":
+	  		xhttp.open("GET", "http://157.201.194.254/~cs213/usa.txt", true);
+	  		xhttp.send();
+	  		break;
+	  	case "canada":
+	  		xhttp.open("GET", "http://157.201.194.254/~cs213/canada.txt", true);
+	  		xhttp.send();
+	  		break;
+	  	case "mexico":
+	  		xhttp.open("GET", "http://157.201.194.254/~cs213/mexico.txt", true);
+	  		xhttp.send();
+	  		break;
+	  	case "russia":
+	  		xhttp.open("GET", "http://157.201.194.254/~cs213/russia.txt", true);
+	  		xhttp.send();
+	  		break;
+		}
+	}
+
+	function loadJson() {
+		var file = document.getElementById("jsonName").value;
+		var url = "http://157.201.194.254/~cs213/" + file;
+		var xmlhttp = new 	XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+
+			if (this.readyState == 4 && this.status == 200) {
+				var myObj = JSON.parse(this.responseText);
+				var list = "<table border = '1'><tr><th>Name</th><th>Address</th><th>Rank</th><th>GPA</th></tr>\n";
+
+				for(var i = 0; i < myObj.students.length; i++)
+				{
+					list = list + "<tr><td>" + myObj.students[i].first + " " + myObj.students[i].last + "</td>" + 
+					"<td>" + myObj.students[i].address.city +  ", " + myObj.students[i].address.state + " " + 
+					myObj.students[i].address.zip + "</td>" + "<td>" + myObj.students[i].major + "</td>" + "<td>" + 
+					myObj.students[i].gpa + "</td></tr>\n";
+				}
+				document.getElementById("table").innerHTML = list;
+			}
+		};
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+	}
+	</script>
+</head>
+<body>
+<div id="demo">
+	<header>
+  		<h2>Using AJAX</h2>
+  	</header>
+  	<br>
+  	<h3>Pick a city to see the 10 largest cities</h3>
+  	<textarea id="display" rows="6" cols="40"></textarea>
+	<br>
+  	<select id="Country">
+  		<option value="usa" selected>USA</option>
+		<option value="canada">Canada</option>
+		<option value="mexico">Mexico</option>
+		<option value="russia">Russia</option>
+	</select>
+  	<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<div>
+	<p>Input a JSON file</p>
+	<input type="text" id="jsonName" name="jsonName" value="json.txt"><br>
+	<br>
+	<button type="button" onclick="loadJson()">Change Content</button>
+	<p id="table"></p>
+</div>
+</body>
+</html>
