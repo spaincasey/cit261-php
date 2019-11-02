@@ -14,20 +14,20 @@
 	    	}
 	  	};
 	  	switch(country) {
-	  	case "usa":
-	  		xhttp.open("GET", "https://swapi.co/api/", true);
+	  	case "people":
+	  		xhttp.open("GET", "https://swapi.co/api/people/", true);
 	  		xhttp.send();
 	  		break;
-	  	case "canada":
-	  		xhttp.open("GET", "http://157.201.194.254/~cs213/canada.txt", true);
+	  	case "planets":
+	  		xhttp.open("GET", "https://swapi.co/api/planets/", true);
 	  		xhttp.send();
 	  		break;
-	  	case "mexico":
-	  		xhttp.open("GET", "http://157.201.194.254/~cs213/mexico.txt", true);
+	  	case "films":
+	  		xhttp.open("GET", "https://swapi.co/api/films/", true);
 	  		xhttp.send();
 	  		break;
-	  	case "russia":
-	  		xhttp.open("GET", "http://157.201.194.254/~cs213/russia.txt", true);
+	  	case "species":
+	  		xhttp.open("GET", "https://swapi.co/api/species/", true);
 	  		xhttp.send();
 	  		break;
 		}
@@ -69,10 +69,10 @@
   	<textarea id="display" rows="6" cols="40"></textarea>
 	<br>
   	<select id="Country">
-  		<option value="usa" selected>USA</option>
-		<option value="canada">Canada</option>
-		<option value="mexico">Mexico</option>
-		<option value="russia">Russia</option>
+  		<option value="people" selected>People</option>
+		<option value="planets">Planets</option>
+		<option value="films">Films</option>
+		<option value="species">Species</option>
 	</select>
   	<button type="button" onclick="loadDoc()">Change Content</button>
 </div>
