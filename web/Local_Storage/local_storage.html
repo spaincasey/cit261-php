@@ -47,7 +47,7 @@
         console.log(data);
 		var obj = JSON.parse(data);
         for (var key in obj.results) {
-            var item = key += ": " += obj.results[key];
+            var item = key + ": " + obj.results[key];
             console.log("Key: " + key);
             console.log("Value: " + obj.results[key]);
             document.getElementById("display").innerHTML = item;
