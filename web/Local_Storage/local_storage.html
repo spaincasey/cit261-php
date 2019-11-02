@@ -44,22 +44,23 @@
 	}
 
     function build(data) {
-        console.log(data);
+        // console.log(data);
 		var obj = JSON.parse(data);
-        for (var key in obj.results) {
-            var object = key.name;
-            console.log("Name: " + key.name);
-            var item = key + ": " + obj.results.thing[key];
-            console.log("Key: " + key);
-            console.log("Value: " + obj.results.thing[key]);
-            document.getElementById("display").innerHTML = object;
-        }
+        // for (var key in obj.results) {
+        //     var object = key.name;
+        //     console.log("Name: " + key.name);
+        //     // var item = key + ": " + obj.results.thing[key];
+        //     // console.log("Key: " + key);
+        //     // console.log("Value: " + obj.results.thing[key]);
+        //     document.getElementById("display").innerHTML = object;
+        // }
         // document.getElementById("display").innerHTML = obj;
 		// var table = "<table><tr><th>First Name</th><th>Last Name</th><th>Student ID</th><th>GPA</th></tr>";
-		// for(var i = 0; i < obj.students.length; i++)
-		// {
-		// 	table += "<tr><td>" + obj.students[i].firstName + "</td><td>" + obj.students[i].lastName + "</td><td>" + obj.students[i].studentId + "</td><td>" + obj.students[i].gpa + "</td></tr>";
-		// }
+		for(var i = 0; i < obj.results.length; i++)
+		{
+            console.log("Name: " + obj.results[i].name);
+			// table += "<tr><td>" + obj.students[i].firstName + "</td><td>" + obj.students[i].lastName + "</td><td>" + obj.students[i].studentId + "</td><td>" + obj.students[i].gpa + "</td></tr>";
+		}
 
 		// document.getElementById("directory").innerHTML = table;
 	}
