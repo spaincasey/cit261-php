@@ -12,7 +12,7 @@
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
                 build(data);
-	     		// document.getElementById("display").innerHTML = this.responseText;
+	     		document.getElementById("display").innerHTML = this.responseText;
 	    	}
 	  	};
 	  	switch(country) {
