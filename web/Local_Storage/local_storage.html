@@ -65,30 +65,6 @@
 
 		// document.getElementById("directory").innerHTML = table;
 	}
-
-	function loadJson() {
-		var file = document.getElementById("jsonName").value;
-		var url = "http://157.201.194.254/~cs213/" + file;
-		var xmlhttp = new 	XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-
-			if (this.readyState == 4 && this.status == 200) {
-				var myObj = JSON.parse(this.responseText);
-				var list = "<table border = '1'><tr><th>Name</th><th>Address</th><th>Rank</th><th>GPA</th></tr>\n";
-
-				for(var i = 0; i < myObj.students.length; i++)
-				{
-					list = list + "<tr><td>" + myObj.students[i].first + " " + myObj.students[i].last + "</td>" + 
-					"<td>" + myObj.students[i].address.city +  ", " + myObj.students[i].address.state + " " + 
-					myObj.students[i].address.zip + "</td>" + "<td>" + myObj.students[i].major + "</td>" + "<td>" + 
-					myObj.students[i].gpa + "</td></tr>\n";
-				}
-				document.getElementById("table").innerHTML = list;
-			}
-		};
-		xmlhttp.open("GET", url, true);
-		xmlhttp.send();
-	}
 	</script>
 </head>
 <body>
@@ -110,14 +86,6 @@
         <option value="vehicles">Vehicles</option>
 	</select>
   	<button type="button" onclick="loadDoc()">Change Content</button>
-</div>
-
-<div class="display center">
-	<p>Input a JSON file</p>
-	<input type="text" id="jsonName" name="jsonName" value="json.txt"><br>
-	<br>
-	<button type="button" onclick="loadJson()">Change Content</button>
-	<p id="table"></p>
 </div>
 </body>
 </html>
