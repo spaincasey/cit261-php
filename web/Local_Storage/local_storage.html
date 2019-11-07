@@ -46,23 +46,6 @@
     function build(data) {
         console.log(data);
 		var obj = JSON.parse(data);
-        // for (var key in obj.results) {
-        //     var object = key.name;
-        //     console.log("Name: " + key.name);
-        //     // var item = key + ": " + obj.results.thing[key];
-        //     // console.log("Key: " + key);
-        //     // console.log("Value: " + obj.results.thing[key]);
-        //     document.getElementById("display").innerHTML = object;
-        // }
-        // document.getElementById("display").innerHTML = obj;
-        // "height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male"
-        // for(var i = 0; i < obj.results[1].length; i++) {
-        //     i
-        // }
-        // Object.keys(obj.results[1]).forEach(function(key) {
-
-        // })
-        // var table = "<table><tr><th>Name</th></tr>";
 		var table = "<table><tr>";
         Object.keys(obj.results[1]).forEach(function(key) {
             table += "<th>" + key + "</th>"; 
@@ -71,17 +54,11 @@
         console.log("Length: " + obj.results.length);
 		for(var i = 0; i < obj.results.length; i++)
 		{
-            // console.log("Name: " + obj.results[i]);
-            // Object.keys(data).forEach(function(key) {
-            //     console.table('Key : ' + key + ', Value : ' + data[key])
-            // })
             table += "<tr>";
             Object.keys(obj.results[i]).forEach(function(key) {
                 table += "<td>" + obj.results[i][key] + "</td>"; 
             })
             table += "</tr>"
-
-			// table += "<tr><td>" + obj.results[i].name + "</td></tr>";
 		}
 
 		document.getElementById("result").innerHTML = table;
