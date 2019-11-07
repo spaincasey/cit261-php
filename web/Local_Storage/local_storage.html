@@ -63,6 +63,31 @@
 
 		document.getElementById("result").innerHTML = table;
 	}
+
+    var $Form = $('form'), $Container = $('#container');
+$Container.hide();
+$Form.on('submit', function(p_oEvent){
+    var sUrl, sMovie, oData;
+    p_oEvent.preventDefault();
+    sMovie = $Form.find('input').val();
+        sUrl = 'https://www.omdbapi.com/?t=' + sMovie + '&type=movie&tomatoes=true'
+        $.ajax(sUrl, {
+            complete: function(p_oXHR, p_sStatus){
+                oData = $.parseJSON(p_oXHR.responseText);
+                console.log(oData);
+
+                if (oData.Response === "False") {
+                    $Container.hide();
+                } else {
+                    $Container.find('.title').text(oData.Title);
+                    $Container.find('.plot').text(oData.Plot);
+                    $Container.find('.poster').html('<img src="' + oData.Poster + '"/>');
+                    $Container.find('.year').text(oData.Year);
+                    $Container.show();
+                }
+            }
+        });    
+    });
 	</script>
 </head>
 <body>
@@ -86,5 +111,22 @@
       <button type="button" onclick="loadDoc()">Change Content</button>
     <div id="result"></div>
 </div>
+<form>
+    <label>
+        <input type="text" name="movie" placeholder="movie title" />
+    </label>
+    <button>Go!</button>
+</form>
+    
+    <div id="container">
+        <h3 class="title">Title</h3>
+        <p class="plot">Plot</p>
+        <span class="poster">Poster</span>
+        <span class="year">Year</span>
+    <!--	
+        <span>TODO: IMDB Rating / Votes</span>
+        <span>TODO: Tomatoes Rating / Votes /Image</span>
+    -->
+    </div>
 </body>
 </html>
