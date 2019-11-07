@@ -55,11 +55,12 @@
         //     document.getElementById("display").innerHTML = object;
         // }
         // document.getElementById("display").innerHTML = obj;
+        // "height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male"
 		var table = "<table><tr><th>Name</th></tr>";
         console.log("Length: " + obj.results.length);
 		for(var i = 0; i < obj.results.length; i++)
 		{
-            console.log("Name: " + obj.results[i].name);
+            console.log("Name: " + obj.results[i]);
 
 			table += "<tr><td>" + "Name: " + obj.results[i].name + "</td></tr>";
 		}
