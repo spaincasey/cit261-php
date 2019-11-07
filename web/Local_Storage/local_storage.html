@@ -12,7 +12,7 @@
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
                 build(data);
-	     		document.getElementById("result").innerHTML = this.responseText;
+	     		// document.getElementById("result").innerHTML = this.responseText;
 	    	}
 	  	};
 	  	switch(country) {
@@ -64,7 +64,7 @@
 			table += "<tr><td>" + "Name: " + obj.results[i].name + "</td></tr>";
 		}
 
-		// document.getElementById("directory").innerHTML = table;
+		document.getElementById("result").innerHTML = table;
 	}
 	</script>
 </head>
