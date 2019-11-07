@@ -55,13 +55,13 @@
         //     document.getElementById("display").innerHTML = object;
         // }
         // document.getElementById("display").innerHTML = obj;
-		// var table = "<table><tr><th>First Name</th><th>Last Name</th><th>Student ID</th><th>GPA</th></tr>";
+		var table = "<table><tr><th>Name</th></tr>";
         console.log("Length: " + obj.results.length);
 		for(var i = 0; i < obj.results.length; i++)
 		{
             console.log("Name: " + obj.results[i].name);
 
-			// table += "<tr><td>" + obj.students[i].firstName + "</td><td>" + obj.students[i].lastName + "</td><td>" + obj.students[i].studentId + "</td><td>" + obj.students[i].gpa + "</td></tr>";
+			table += "<tr><td>" + "Name: " + obj.results[i].name + "</td></tr>";
 		}
 
 		// document.getElementById("directory").innerHTML = table;
