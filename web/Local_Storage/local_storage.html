@@ -62,14 +62,13 @@
         console.log(data);
 		var obj = JSON.parse(data);
 		var table = "<table><tr>";
-        var i = 0;
-        Object.keys(obj.results[1]).forEach(function(key) {
-            table += "<th>" + key + "</th>"; 
-            i++;
-            if(i == 8) {
-                break;
-            }
-        })
+        for(var i = 0; i < 9; i++) {
+            obj.results[1].key;
+        }
+        // Object.keys(obj.results[1]).forEach(function(key) {
+        //     table += "<th>" + key + "</th>"; 
+        //     i++;
+        // })
         table += "</tr>";
         console.log("Length: " + obj.results.length);
 		for(var i = 0; i < obj.results.length; i++)
