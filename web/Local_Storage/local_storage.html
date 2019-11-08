@@ -5,13 +5,14 @@
 	<title>Casey Spain's Assign09</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
+    var it = 0;
 	function loadDoc() {
         document.getElementById("result").innerHTML = "";
 		var type = document.getElementById("Country").value;
 	  	switch(type) {
 	  	case "people":
             var url = "https://swapi.co/api/people/?page=";
-            var it = 0;
+            it = 0;
             for(var i = 1; i < 10; i++) {
                 ajaxRequest(url + i, it);
             }
