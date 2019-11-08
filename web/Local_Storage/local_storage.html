@@ -66,17 +66,20 @@
         Object.keys(obj.results[1]).forEach(function(key) {
             keys.push(key);
         })
-        for(var i = 0; i < 9; i++) {
+        for(var i = 0; i < 8; i++) {
             table += "<th>" + keys[i] + "</th>"; 
         }
         table += "</tr>";
         console.log("Length: " + obj.results.length);
-		for(var i = 0; i < 9; i++)
+		for(var i = 0; i < obj.results.length; i++)
 		{
             table += "<tr>";
-            Object.keys(obj.results[i]).forEach(function(key) {
-                table += "<td>" + obj.results[i][key] + "</td>"; 
-            })
+            for(var j = 0; j < 8; j++) {
+                table += "<td>" + obj.results[i][j] + "</td>"; 
+            }
+            // Object.keys(obj.results[i]).forEach(function(key) {
+            //     table += "<td>" + obj.results[i][key] + "</td>"; 
+            // })
             table += "</tr>"
 		}
 
