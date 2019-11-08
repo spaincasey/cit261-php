@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
     var it = 0;
-    var table = '';
 	function loadDoc() {
         document.getElementById("result").innerHTML = "";
 		var type = document.getElementById("Country").value;
@@ -14,11 +13,9 @@
 	  	case "people":
             var url = "https://swapi.co/api/people/?page=";
             it = 0;
-            table = "";
             for(var i = 1; i < 10; i++) {
                 ajaxRequest(url + i);
             }
-            // document.getElementById("result").innerHTML = table;
 	  		break;
 	  	case "planets":
             var url = "https://swapi.co/api/planets/?page=";
@@ -64,19 +61,16 @@
     function build(data) {
         // console.log(data);
 		var obj = JSON.parse(data);
-        // var table;
-        // if(it == 0) {
-            table += "<table><tr>";
-            var keys = [];
-            Object.keys(obj.results[1]).forEach(function(key) {
-                keys.push(key);
-            })
-            for(var i = 0; i < 8; i++) {
-                table += "<th>" + keys[i] + "</th>"; 
-            }
-            table += "<th>fav</th>";
-            table += "</tr>";
-        // }
+		var table = "<table><tr>";
+        var keys = [];
+        Object.keys(obj.results[1]).forEach(function(key) {
+            keys.push(key);
+        })
+        for(var i = 0; i < 8; i++) {
+            table += "<th>" + keys[i] + "</th>"; 
+        }
+        table += "<th>fav</th>";
+        table += "</tr>";
         console.log("Length: " + obj.results.length);
 		for(var i = 0; i < obj.results.length; i++)
 		{
