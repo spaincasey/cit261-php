@@ -7,36 +7,20 @@
 	<script>
 	function loadDoc() {
 		var country = document.getElementById("Country").value;
-	  	var xhttp = new XMLHttpRequest();
-	  	xhttp.onreadystatechange = function() {
-	    	if (this.readyState == 4 && this.status == 200) {
-                var data = this.response;
-                build(data);
-	     		// document.getElementById("result").innerHTML = this.responseText;
-	    	}
-	  	};
+	  	// var xhttp = new XMLHttpRequest();
+	  	// xhttp.onreadystatechange = function() {
+	    // 	if (this.readyState == 4 && this.status == 200) {
+        //         var data = this.response;
+        //         build(data);
+	    //  		// document.getElementById("result").innerHTML = this.responseText;
+	    // 	}
+	  	// };
 	  	switch(country) {
 	  	case "people":
-        //   people_vector <- c("https://swapi.co/api/people/?page=1",
-        //                     "https://swapi.co/api/people/?page=2",
-        //                     "https://swapi.co/api/people/?page=3",
-        //                     "https://swapi.co/api/people/?page=4",
-        //                     "https://swapi.co/api/people/?page=5",
-        //                     "https://swapi.co/api/people/?page=6",
-        //                     "https://swapi.co/api/people/?page=7",
-        //                     "https://swapi.co/api/people/?page=8",
-        //                     "https://swapi.co/api/people/?page=9")
-        //                     people_content <- map(people_vector, GET)
-	  		xhttp.open("GET", "https://swapi.co/api/people/?page=1",
-                            "https://swapi.co/api/people/?page=2",
-                            "https://swapi.co/api/people/?page=3",
-                            "https://swapi.co/api/people/?page=4",
-                            "https://swapi.co/api/people/?page=5",
-                            "https://swapi.co/api/people/?page=6",
-                            "https://swapi.co/api/people/?page=7",
-                            "https://swapi.co/api/people/?page=8",
-                            "https://swapi.co/api/people/?page=9", true);
-	  		xhttp.send();
+        var url = "https://swapi.co/api/people/";
+            for(var i = 1; i < 10; i++) {
+                ajaxRequest(url + i);
+            }
 	  		break;
 	  	case "planets":
 	  		xhttp.open("GET", "https://swapi.co/api/planets/", true);
@@ -60,6 +44,19 @@
 	  		break;
 		}
 	}
+
+    function ajaxRequest(url) {
+        var xhttp = new XMLHttpRequest();
+	  	xhttp.onreadystatechange = function() {
+	    	if (this.readyState == 4 && this.status == 200) {
+                var data = this.response;
+                build(data);
+            }
+	  	};
+        xhttp.open("GET", "https://swapi.co/api/people/", true);
+        xhttp.send();
+
+    }
 
     function build(data) {
         console.log(data);
