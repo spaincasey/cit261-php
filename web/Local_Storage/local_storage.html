@@ -61,8 +61,9 @@
     function build(data) {
         // console.log(data);
 		var obj = JSON.parse(data);
+        var table = "";
         if(it == 0) {
-            var table = "<table><tr>";
+            table += "<table><tr>";
             var keys = [];
             Object.keys(obj.results[1]).forEach(function(key) {
                 keys.push(key);
