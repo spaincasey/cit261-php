@@ -4,94 +4,6 @@
 	<link rel="stylesheet" type="text/css" href="local_storage.css"/>
 	<title>Casey Spain's Assign09</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script>
-    var table = '';
-	function loadDoc() {
-		var type = document.getElementById("Country").value;
-	  	switch(type) {
-	  	case "people":
-            var url = "https://swapi.co/api/people/?page=";
-            table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
-            for(var i = 1; i < 10; i++) {
-                ajaxRequest(url + i);
-            }
-            document.getElementById("result").innerHTML = table;
-	  		break;
-	  	case "planets":
-            var url = "https://swapi.co/api/planets/?page=";
-            table  = "<table><tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th><th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th></tr>";
-            for(var i = 1; i < 8; i++) {
-                ajaxRequest(url + i);
-            }
-            document.getElementById("result").innerHTML = table;
-	  		break;
-	  	case "species":
-            var url = "https://swapi.co/api/species/?page=";
-            table  = "<table><tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th><th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th></tr>";
-            for(var i = 1; i < 5; i++) {
-                ajaxRequest(url + i);
-            }
-            document.getElementById("result").innerHTML = table;
-	  		break;
-        case "starships":
-            var url = "https://swapi.co/api/starships/?page=";
-            table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
-            for(var i = 1; i < 5; i++) {
-                ajaxRequest(url + i);
-            }
-            document.getElementById("result").innerHTML = table;
-	  		break;
-	  	case "vehicles":
-            var url = "https://swapi.co/api/vehicles/?page=";
-            table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
-            for(var i = 1; i < 5; i++) {
-                ajaxRequest(url + i);
-            }
-            document.getElementById("result").innerHTML = table;
-	  		break;
-		}
-	}
-
-    function ajaxRequest(url) {
-        var xhttp = new XMLHttpRequest();
-	  	xhttp.onreadystatechange = function() {
-	    	if (this.readyState == 4 && this.status == 200) {
-                var data = this.response;
-                build(data);
-            }
-	  	};
-        xhttp.open("GET", url, true);
-        xhttp.send();
-
-    }
-
-    function build(data) {
-		var obj = JSON.parse(data);
-		// var table = "<table><tr>";
-        // var keys = [];
-        // Object.keys(obj.results[1]).forEach(function(key) {
-        //     keys.push(key);
-        // })
-        // for(var i = 0; i < 8; i++) {
-        //     table += "<th>" + keys[i] + "</th>"; 
-        // }
-        // table += "</tr>";
-        // console.log("Length: " + obj.results.length);
-		for(var i = 0; i < obj.results.length; i++)
-		{
-            table += "<tr>";
-            for(var j = 0; j < 8; j++) {
-                table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
-            }
-            // Object.keys(obj.results[i]).forEach(function(key) {
-            //     table += "<td>" + obj.results[i][key] + "</td>"; 
-            // })
-            table += "</tr>"
-		}
-
-		document.getElementById("result").innerHTML = table;
-	}
-	</script>
 </head>
 <body>
 <div class="header">
@@ -114,4 +26,92 @@
     <div id="result"></div>
 </div>
 </body>
+<script>
+        var table = '';
+        function loadDoc() {
+            var type = document.getElementById("Country").value;
+              switch(type) {
+              case "people":
+                var url = "https://swapi.co/api/people/?page=";
+                table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
+                for(var i = 1; i < 10; i++) {
+                    ajaxRequest(url + i);
+                }
+                document.getElementById("result").innerHTML = table;
+                  break;
+              case "planets":
+                var url = "https://swapi.co/api/planets/?page=";
+                table  = "<table><tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th><th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th></tr>";
+                for(var i = 1; i < 8; i++) {
+                    ajaxRequest(url + i);
+                }
+                document.getElementById("result").innerHTML = table;
+                  break;
+              case "species":
+                var url = "https://swapi.co/api/species/?page=";
+                table  = "<table><tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th><th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th></tr>";
+                for(var i = 1; i < 5; i++) {
+                    ajaxRequest(url + i);
+                }
+                document.getElementById("result").innerHTML = table;
+                  break;
+            case "starships":
+                var url = "https://swapi.co/api/starships/?page=";
+                table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
+                for(var i = 1; i < 5; i++) {
+                    ajaxRequest(url + i);
+                }
+                document.getElementById("result").innerHTML = table;
+                  break;
+              case "vehicles":
+                var url = "https://swapi.co/api/vehicles/?page=";
+                table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
+                for(var i = 1; i < 5; i++) {
+                    ajaxRequest(url + i);
+                }
+                document.getElementById("result").innerHTML = table;
+                  break;
+            }
+        }
+    
+        function ajaxRequest(url) {
+            var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = this.response;
+                    build(data);
+                }
+              };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+    
+        }
+    
+        function build(data) {
+            var obj = JSON.parse(data);
+            // var table = "<table><tr>";
+            // var keys = [];
+            // Object.keys(obj.results[1]).forEach(function(key) {
+            //     keys.push(key);
+            // })
+            // for(var i = 0; i < 8; i++) {
+            //     table += "<th>" + keys[i] + "</th>"; 
+            // }
+            // table += "</tr>";
+            // console.log("Length: " + obj.results.length);
+            for(var i = 0; i < obj.results.length; i++)
+            {
+                table += "<tr>";
+                for(var j = 0; j < 8; j++) {
+                    table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
+                }
+                // Object.keys(obj.results[i]).forEach(function(key) {
+                //     table += "<td>" + obj.results[i][key] + "</td>"; 
+                // })
+                table += "</tr>"
+            }
+    
+            document.getElementById("result").innerHTML = table;
+        }
+        </script>
 </html>
