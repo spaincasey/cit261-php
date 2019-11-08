@@ -5,40 +5,48 @@
 	<title>Casey Spain's Assign09</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-    var it = 0;
-    var table = '';
+    // var it = 0;
+    // var table = '';
 	function loadDoc() {
         document.getElementById("result").innerHTML = "";
 		var type = document.getElementById("Country").value;
 	  	switch(type) {
 	  	case "people":
             var url = "https://swapi.co/api/people/?page=";
-            // it = 0;
-            // table = "";
+            it = 0;
+            table = "";
             for(var i = 1; i < 10; i++) {
                 ajaxRequest(url + i);
             }
             // document.getElementById("result").innerHTML = table;
 	  		break;
 	  	case "planets":
+            it = 0;
+            table = "";
             var url = "https://swapi.co/api/planets/?page=";
             for(var i = 1; i < 8; i++) {
                 ajaxRequest(url + i);
             }
 	  		break;
 	  	case "species":
+            it = 0;
+            table = "";
             var url = "https://swapi.co/api/species/?page=";
             for(var i = 1; i < 5; i++) {
                 ajaxRequest(url + i);
             }
 	  		break;
         case "starships":
+            it = 0;
+            table = "";
             var url = "https://swapi.co/api/starships/?page=";
             for(var i = 1; i < 5; i++) {
                 ajaxRequest(url + i);
             }
 	  		break;
 	  	case "vehicles":
+            it = 0;
+            table = "";
             var url = "https://swapi.co/api/vehicles/?page=";
             for(var i = 1; i < 5; i++) {
                 ajaxRequest(url + i);
