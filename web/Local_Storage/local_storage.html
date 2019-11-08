@@ -62,16 +62,16 @@
         console.log(data);
 		var obj = JSON.parse(data);
 		var table = "<table><tr>";
+        var keys = [];
+        Object.keys(obj.results[1]).forEach(function(key) {
+            keys.push(key);
+        })
         for(var i = 0; i < 9; i++) {
-            obj.results[1].key;
+            table += "<th>" + keys[i] + "</th>"; 
         }
-        // Object.keys(obj.results[1]).forEach(function(key) {
-        //     table += "<th>" + key + "</th>"; 
-        //     i++;
-        // })
         table += "</tr>";
         console.log("Length: " + obj.results.length);
-		for(var i = 0; i < obj.results.length; i++)
+		for(var i = 0; i < 9; i++)
 		{
             table += "<tr>";
             Object.keys(obj.results[i]).forEach(function(key) {
