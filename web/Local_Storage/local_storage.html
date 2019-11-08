@@ -62,8 +62,13 @@
         console.log(data);
 		var obj = JSON.parse(data);
 		var table = "<table><tr>";
+        var i = 0;
         Object.keys(obj.results[1]).forEach(function(key) {
             table += "<th>" + key + "</th>"; 
+            i++;
+            if(i == 10) {
+                break;
+            }
         })
         table += "</tr>";
         console.log("Length: " + obj.results.length);
