@@ -6,16 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 	function loadDoc() {
-		var country = document.getElementById("Country").value;
-	  	// var xhttp = new XMLHttpRequest();
-	  	// xhttp.onreadystatechange = function() {
-	    // 	if (this.readyState == 4 && this.status == 200) {
-        //         var data = this.response;
-        //         build(data);
-	    //  		// document.getElementById("result").innerHTML = this.responseText;
-	    // 	}
-	  	// };
-	  	switch(country) {
+		var type = document.getElementById("Country").value;
+	  	switch(type) {
 	  	case "people":
             var url = "https://swapi.co/api/people/?page=";
             for(var i = 1; i < 10; i++) {
@@ -27,9 +19,6 @@
             for(var i = 1; i < 10; i++) {
                 ajaxRequest(url + i);
             }
-	  		// break;
-	  		// xhttp.open("GET", "https://swapi.co/api/planets/", true);
-	  		// xhttp.send();
 	  		break;
 	  	case "films":
             var url = "https://swapi.co/api/films/?";
@@ -88,31 +77,6 @@
 
 		document.getElementById("result").innerHTML = table;
 	}
-
-    var $Form = $('form'), $Container = $('#container');
-$Container.hide();
-$Form.on('submit', function(p_oEvent){
-    var sUrl, sMovie, oData;
-    p_oEvent.preventDefault();
-    sMovie = $Form.find('input').val();
-        sUrl = 'https://www.omdbapi.com/?t=' + sMovie + '&type=movie&tomatoes=true'
-        $.ajax(sUrl, {
-            complete: function(p_oXHR, p_sStatus){
-                oData = $.parseJSON(p_oXHR.responseText);
-                console.log(oData);
-
-                if (oData.Response === "False") {
-                    $Container.hide();
-                } else {
-                    $Container.find('.title').text(oData.Title);
-                    $Container.find('.plot').text(oData.Plot);
-                    $Container.find('.poster').html('<img src="' + oData.Poster + '"/>');
-                    $Container.find('.year').text(oData.Year);
-                    $Container.show();
-                }
-            }
-        });    
-    });
 	</script>
 </head>
 <body>
@@ -136,22 +100,5 @@ $Form.on('submit', function(p_oEvent){
       <button type="button" onclick="loadDoc()">Change Content</button>
     <div id="result"></div>
 </div>
-<form>
-    <label>
-        <input type="text" name="movie" placeholder="movie title" />
-    </label>
-    <button>Go!</button>
-</form>
-    
-    <div id="container">
-        <h3 class="title">Title</h3>
-        <p class="plot">Plot</p>
-        <span class="poster">Poster</span>
-        <span class="year">Year</span>
-    <!--	
-        <span>TODO: IMDB Rating / Votes</span>
-        <span>TODO: Tomatoes Rating / Votes /Image</span>
-    -->
-    </div>
 </body>
 </html>
