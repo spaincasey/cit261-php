@@ -21,32 +21,24 @@
             // document.getElementById("result").innerHTML = table;
 	  		break;
 	  	case "planets":
-            it = 0;
-            table = "";
             var url = "https://swapi.co/api/planets/?page=";
             for(var i = 1; i < 8; i++) {
                 ajaxRequest(url + i);
             }
 	  		break;
 	  	case "species":
-            it = 0;
-            table = "";
             var url = "https://swapi.co/api/species/?page=";
             for(var i = 1; i < 5; i++) {
                 ajaxRequest(url + i);
             }
 	  		break;
         case "starships":
-            it = 0;
-            table = "";
             var url = "https://swapi.co/api/starships/?page=";
             for(var i = 1; i < 5; i++) {
                 ajaxRequest(url + i);
             }
 	  		break;
 	  	case "vehicles":
-            it = 0;
-            table = "";
             var url = "https://swapi.co/api/vehicles/?page=";
             for(var i = 1; i < 5; i++) {
                 ajaxRequest(url + i);
@@ -73,10 +65,9 @@
         // console.log(data);
 		var obj = JSON.parse(data);
         // var table;
-        var keys = [];
-        // if(it == 0){
+        // if(it == 0) {
             table += "<table><tr>";
-            // var keys = [];
+            var keys = [];
             Object.keys(obj.results[1]).forEach(function(key) {
                 keys.push(key);
             })
