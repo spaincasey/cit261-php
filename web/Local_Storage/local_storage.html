@@ -20,10 +20,6 @@
                 ajaxRequest(url + i);
             }
 	  		break;
-	  	case "films":
-            var url = "https://swapi.co/api/films/";
-            ajaxRequest(url);
-            break;
 	  	case "species":
             var url = "https://swapi.co/api/species/?page=";
             for(var i = 1; i < 5; i++) {
@@ -126,7 +122,6 @@
   	<select id="Country">
   		<option value="people" selected>People</option>
 		<option value="planets">Planets</option>
-		<option value="films">Films</option>
         <option value="species">Species</option>
         <option value="starships">Starships</option>
         <option value="vehicles">Vehicles</option>
