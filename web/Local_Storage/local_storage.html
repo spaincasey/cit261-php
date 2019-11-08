@@ -17,7 +17,25 @@
 	  	};
 	  	switch(country) {
 	  	case "people":
-	  		xhttp.open("GET", "https://swapi.co/api/people/", true);
+        //   people_vector <- c("https://swapi.co/api/people/?page=1",
+        //                     "https://swapi.co/api/people/?page=2",
+        //                     "https://swapi.co/api/people/?page=3",
+        //                     "https://swapi.co/api/people/?page=4",
+        //                     "https://swapi.co/api/people/?page=5",
+        //                     "https://swapi.co/api/people/?page=6",
+        //                     "https://swapi.co/api/people/?page=7",
+        //                     "https://swapi.co/api/people/?page=8",
+        //                     "https://swapi.co/api/people/?page=9")
+        //                     people_content <- map(people_vector, GET)
+	  		xhttp.open("GET", "https://swapi.co/api/people/?page=1",
+                            "https://swapi.co/api/people/?page=2",
+                            "https://swapi.co/api/people/?page=3",
+                            "https://swapi.co/api/people/?page=4",
+                            "https://swapi.co/api/people/?page=5",
+                            "https://swapi.co/api/people/?page=6",
+                            "https://swapi.co/api/people/?page=7",
+                            "https://swapi.co/api/people/?page=8",
+                            "https://swapi.co/api/people/?page=9", true);
 	  		xhttp.send();
 	  		break;
 	  	case "planets":
