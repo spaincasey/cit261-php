@@ -15,33 +15,33 @@
             var url = "https://swapi.co/api/people/?page=";
             it = 0;
             table = "";
-            for(var a = 1; a < 10; a++) {
-                ajaxRequest(url + a);
+            for(var i = 1; i < 10; i++) {
+                ajaxRequest(url + i);
             }
             // document.getElementById("result").innerHTML = table;
 	  		break;
 	  	case "planets":
             var url = "https://swapi.co/api/planets/?page=";
-            for(var b = 1; b < 8; b++) {
-                ajaxRequest(url + b);
+            for(var i = 1; i < 8; i++) {
+                ajaxRequest(url + i);
             }
 	  		break;
 	  	case "species":
             var url = "https://swapi.co/api/species/?page=";
-            for(var c = 1; c < 5; c++) {
-                ajaxRequest(url + c);
+            for(var i = 1; i < 5; i++) {
+                ajaxRequest(url + i);
             }
 	  		break;
         case "starships":
             var url = "https://swapi.co/api/starships/?page=";
-            for(var d = 1; d < 5; d++) {
-                ajaxRequest(url + d);
+            for(var i = 1; i < 5; i++) {
+                ajaxRequest(url + i);
             }
 	  		break;
 	  	case "vehicles":
             var url = "https://swapi.co/api/vehicles/?page=";
-            for(var e = 1; e < 5; e++) {
-                ajaxRequest(url + e);
+            for(var i = 1; i < 5; i++) {
+                ajaxRequest(url + i);
             }
 	  		break;
 		}
@@ -65,9 +65,10 @@
         // console.log(data);
 		var obj = JSON.parse(data);
         // var table;
+        var keys = [];
         if(it == 0){
             table += "<table><tr>";
-            var keys = [];
+            // var keys = [];
             Object.keys(obj.results[1]).forEach(function(key) {
                 keys.push(key);
             })
@@ -78,12 +79,12 @@
             table += "</tr>";
         }
         console.log("Length: " + obj.results.length);
-		for(var j = 0; j < obj.results.length; j++)
+		for(var i = 0; i < obj.results.length; i++)
 		{
             it++;
             table += "<tr>";
-            for(var k = 0; k < 8; k++) {
-                table += "<td>" + obj.results[j][keys[k]] + "</td>"; 
+            for(var j = 0; j < 8; j++) {
+                table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
             }
             table += "<td>" + it + "</td>";
             // Object.keys(obj.results[i]).forEach(function(key) {
