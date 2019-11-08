@@ -27,13 +27,13 @@
 </div>
 </body>
 <script>
-        var table = '';
+
         function loadDoc() {
             var type = document.getElementById("Country").value;
               switch(type) {
               case "people":
                 var url = "https://swapi.co/api/people/?page=";
-                table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
+                // table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
                 for(var i = 1; i < 10; i++) {
                     ajaxRequest(url + i);
                 }
@@ -41,7 +41,7 @@
                   break;
               case "planets":
                 var url = "https://swapi.co/api/planets/?page=";
-                table  = "<table><tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th><th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th></tr>";
+                // table  = "<table><tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th><th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th></tr>";
                 for(var i = 1; i < 8; i++) {
                     ajaxRequest(url + i);
                 }
@@ -49,7 +49,7 @@
                   break;
               case "species":
                 var url = "https://swapi.co/api/species/?page=";
-                table  = "<table><tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th><th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th></tr>";
+                // table  = "<table><tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th><th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th></tr>";
                 for(var i = 1; i < 5; i++) {
                     ajaxRequest(url + i);
                 }
@@ -57,7 +57,7 @@
                   break;
             case "starships":
                 var url = "https://swapi.co/api/starships/?page=";
-                table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
+                // table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
                 for(var i = 1; i < 5; i++) {
                     ajaxRequest(url + i);
                 }
@@ -65,7 +65,7 @@
                   break;
               case "vehicles":
                 var url = "https://swapi.co/api/vehicles/?page=";
-                table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
+                // table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
                 for(var i = 1; i < 5; i++) {
                     ajaxRequest(url + i);
                 }
@@ -88,6 +88,24 @@
         }
     
         function build(data) {
+            var type = document.getElementById("Country").value;
+              switch(type) {
+              case "people":
+                var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
+                break;
+              case "planets":
+                var table  = "<table><tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th><th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th></tr>";
+                break;
+              case "species":
+                var table  = "<table><tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th><th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th></tr>";
+                break;
+            case "starships":
+                var table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
+                break;
+              case "vehicles":
+                var table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
+                break;
+            }
             var obj = JSON.parse(data);
             // var table = "<table><tr>";
             // var keys = [];
