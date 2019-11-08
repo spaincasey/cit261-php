@@ -42,45 +42,17 @@
 	}
 
     function ajaxRequest(url) {
-        var table = "<table>";
-        var type = document.getElementById("Country").value;
-        switch(type) {
-	  	case "people":
-            table  += "<tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
-	  		break;
-	  	case "planets":
-            table  += "<table><tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th><th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th></tr>";
-	  		break;
-	  	case "species":
-            table  += "<table><tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th><th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th></tr>";
-            break;
-	  	case "starships":
-            table  += "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";          
-	  		break;
-        case "vehicles":
-            table  += "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
-	  		break;
-		}
+        
         var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
-                var obj = JSON.parse(data);
-                for(var i = 0; i < obj.results.length; i++)
-                {
-                    table += "<tr>";
-                    for(var j = 0; j < 8; j++) {
-                        table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
-                    }
-                    table += "</tr>"
-                }
-                document.getElementById("result").innerHTML = table;
-                // build(data);
+                build(data);
             }
 	  	};
         xhttp.open("GET", url, true);
         xhttp.send();
-        // document.getElementById("result").innerHTML = table;
+
     }
 
     function build(data) {
@@ -102,6 +74,9 @@
             for(var j = 0; j < 8; j++) {
                 table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
             }
+            // Object.keys(obj.results[i]).forEach(function(key) {
+            //     table += "<td>" + obj.results[i][key] + "</td>"; 
+            // })
             table += "</tr>"
 		}
 
