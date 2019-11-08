@@ -18,7 +18,7 @@
             for(var i = 1; i < 10; i++) {
                 ajaxRequest(url + i);
             }
-            document.getElementById("result").innerHTML = table;
+            // document.getElementById("result").innerHTML = table;
 	  		break;
 	  	case "planets":
             var url = "https://swapi.co/api/planets/?page=";
@@ -93,7 +93,7 @@
             console.log("iterator:" + it);
 		}
         
-		// document.getElementById("result").innerHTML = table;
+		document.getElementById("result").innerHTML += table;
 	}
 	</script>
 </head>
