@@ -14,7 +14,7 @@
             var url = "https://swapi.co/api/people/?page=";
             it = 0;
             for(var i = 1; i < 10; i++) {
-                ajaxRequest(url + i, it);
+                ajaxRequest(url + i);
             }
 	  		break;
 	  	case "planets":
@@ -44,13 +44,13 @@
 		}
 	}
 
-    function ajaxRequest(url, it) {
+    function ajaxRequest(url) {
         
         var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
-                build(data, it);
+                build(data);
             }
 	  	};
         xhttp.open("GET", url, true);
@@ -58,7 +58,7 @@
 
     }
 
-    function build(data, it) {
+    function build(data) {
         // console.log(data);
 		var obj = JSON.parse(data);
 		var table = "<table><tr>";
