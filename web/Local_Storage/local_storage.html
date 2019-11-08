@@ -5,59 +5,58 @@
 	<title>Casey Spain's Assign09</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-    var table = '';
-	function loadDoc() {
+    function loadDoc() {
 		var type = document.getElementById("Country").value;
 	  	switch(type) {
 	  	case "people":
             var url = "https://swapi.co/api/people/?page=";
-            table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
+            var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
             for(var i = 1; i < 10; i++) {
-                ajaxRequest(url + i);
+                ajaxRequest(url + i, table);
             }
             document.getElementById("result").innerHTML = table;
 	  		break;
 	  	case "planets":
             var url = "https://swapi.co/api/planets/?page=";
-            table  = "<table><tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th><th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th></tr>";
+            var table  = "<table><tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th><th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th></tr>";
             for(var i = 1; i < 8; i++) {
-                ajaxRequest(url + i);
+                ajaxRequest(url + i, table);
             }
             document.getElementById("result").innerHTML = table;
 	  		break;
 	  	case "species":
             var url = "https://swapi.co/api/species/?page=";
-            table  = "<table><tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th><th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th></tr>";
+            var table  = "<table><tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th><th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th></tr>";
             for(var i = 1; i < 5; i++) {
-                ajaxRequest(url + i);
+                ajaxRequest(url + i, table);
             }
             document.getElementById("result").innerHTML = table;
 	  		break;
         case "starships":
             var url = "https://swapi.co/api/starships/?page=";
-            table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
+            var table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
             for(var i = 1; i < 5; i++) {
-                ajaxRequest(url + i);
+                ajaxRequest(url + i, table);
             }
             document.getElementById("result").innerHTML = table;
 	  		break;
 	  	case "vehicles":
             var url = "https://swapi.co/api/vehicles/?page=";
-            table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
+            var table  = "<table><tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost in Credits</th><th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th></tr>";
             for(var i = 1; i < 5; i++) {
-                ajaxRequest(url + i);
+                ajaxRequest(url + i, table);
             }
             document.getElementById("result").innerHTML = table;
 	  		break;
 		}
 	}
 
-    function ajaxRequest(url) {
+    function ajaxRequest(url, table) {
         var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
-                build(data);
+                build(data, table);
             }
 	  	};
         xhttp.open("GET", url, true);
