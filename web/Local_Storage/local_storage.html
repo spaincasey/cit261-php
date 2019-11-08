@@ -46,8 +46,8 @@
 	}
 
     function ajaxRequest(url) {
+        var table = "";
         var type = document.getElementById("Country").value;
-        var table;
         switch(type) {
 	  	case "people":
             table  += "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th></tr>";
@@ -78,12 +78,13 @@
                     }
                     table += "</tr>"
                 }
+                document.getElementById("result").innerHTML = table;
                 // build(data);
             }
 	  	};
         xhttp.open("GET", url, true);
         xhttp.send();
-        document.getElementById("result").innerHTML = table;
+        // document.getElementById("result").innerHTML = table;
     }
 
     function build(data) {
