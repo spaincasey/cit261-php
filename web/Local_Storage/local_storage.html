@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
     var it = 0;
+    var table = '';
 	function loadDoc() {
         document.getElementById("result").innerHTML = "";
 		var type = document.getElementById("Country").value;
@@ -61,7 +62,7 @@
     function build(data) {
         // console.log(data);
 		var obj = JSON.parse(data);
-        var table = "";
+        // var table;
         if(it == 0) {
             table += "<table><tr>";
             var keys = [];
