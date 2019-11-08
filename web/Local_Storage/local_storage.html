@@ -78,12 +78,12 @@
             table += "</tr>";
         }
         console.log("Length: " + obj.results.length);
-		for(var i = 0; i < obj.results.length; i++)
+		for(var j = 0; j < obj.results.length; j++)
 		{
             it++;
             table += "<tr>";
-            for(var j = 0; j < 8; j++) {
-                table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
+            for(var k = 0; k < 8; k++) {
+                table += "<td>" + obj.results[j][keys[k]] + "</td>"; 
             }
             table += "<td>" + it + "</td>";
             // Object.keys(obj.results[i]).forEach(function(key) {
