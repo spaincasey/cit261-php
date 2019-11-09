@@ -62,7 +62,7 @@
     function build(data) {
         // console.log(data);
 		var obj = JSON.parse(data);
-		var table = "<table><tr>";
+		var table = "<tr>";
         var keys = [];
         Object.keys(obj.results[1]).forEach(function(key) {
             keys.push(key);
@@ -89,7 +89,7 @@
             console.log("iterator:" + it);
 		}
         
-		document.getElementById("result").innerHTML += table;
+		document.getElementById("table1").innerHTML += table;
 	}
     function addFavorite(index) {
         var type = document.getElementById("Country").value;
