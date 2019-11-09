@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
     var it = 0;
+    var table = "<table>";
 	function loadDoc() {
         document.getElementById("result").innerHTML = "";
 		var type = document.getElementById("Country").value;
@@ -69,7 +70,7 @@
         for(var i = 0; i < 8; i++) {
             table += "<th>" + keys[i] + "</th>"; 
         }
-        table += "<th>fav</th>";
+        table += "<th>fav</th><th>add</th>";
         table += "</tr>";
         console.log("Length: " + obj.results.length);
 		for(var i = 0; i < obj.results.length; i++)
@@ -80,6 +81,7 @@
                 table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
             }
             table += "<td>" + it + "</td>";
+            table += "<td><button id='button" + it + "' type='button'>Click Me!</button></td>";
             // Object.keys(obj.results[i]).forEach(function(key) {
             //     table += "<td>" + obj.results[i][key] + "</td>"; 
             // })
@@ -109,7 +111,11 @@
         <option value="vehicles">Vehicles</option>
 	</select>
       <button type="button" onclick="loadDoc()">Change Content</button>
-    <div id="result" class="display"></div>
+    <div id="result" class="display">
+        <table id="table1">
+
+        </table>
+    </div>
 </div>
 </body>
 </html>
