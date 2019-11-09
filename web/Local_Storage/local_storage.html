@@ -70,7 +70,7 @@
         for(var i = 0; i < 8; i++) {
             table += "<th>" + keys[i] + "</th>"; 
         }
-        table += "<th>fav</th><th>add</th>";
+        table += "<th>fav</th>";
         table += "</tr>";
         console.log("Length: " + obj.results.length);
 		for(var i = 0; i < obj.results.length; i++)
@@ -80,8 +80,8 @@
             for(var j = 0; j < 8; j++) {
                 table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
             }
-            table += "<td>" + it + "</td>";
-            table += "<td><button id='button" + it + "' type='button'>Click Me!</button></td>";
+            // table += "<td>" + it + "</td>";
+            table += "<td><button id='button" + it + "' type='button'>favorite " + it + "</button></td>";
             // Object.keys(obj.results[i]).forEach(function(key) {
             //     table += "<td>" + obj.results[i][key] + "</td>"; 
             // })
