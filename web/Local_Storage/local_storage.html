@@ -63,6 +63,8 @@
         var obj = JSON.parse(data);
         console.log(obj);
         console.log(obj.name);
+        var div = document.getElementById("result");
+        div.innerHTML = obj.name;
     }
 
     function build(data) {
