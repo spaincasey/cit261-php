@@ -29,6 +29,10 @@ table, th, td {
     color: white;
 }
 
+td {
+    width: 5vh;
+}
+
 .center {
     display: block;
     margin-left: auto;
