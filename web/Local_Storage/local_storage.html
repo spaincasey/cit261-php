@@ -12,10 +12,10 @@
 		var type = document.getElementById("Country").value;
 	  	switch(type) {
 	  	case "people":
-            var url = "https://swapi.co/api/people/?page=";
+            var url = "https://swapi.co/api/people/";
             it = 0;
-            for(var i = 1; i < 10; i++) {
-                ajaxRequest(url + i);
+            for(var i = 1; i < 89; i++) {
+                ajaxRequest(url + i + "/");
             }
 	  		break;
 	  	case "planets":
