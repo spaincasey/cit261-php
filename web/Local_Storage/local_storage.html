@@ -16,7 +16,6 @@
 	  	case "people":
             var url = "https://swapi.co/api/people/";
             var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-            // it = 0;
             for(var i = 1; i <= 89; i++) {
                 ajaxRequest(url + i + "/", i, keys);
             }
@@ -74,118 +73,6 @@
         // var type = document.getElementById("Country").value;
 
         // var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-        var div = document.getElementById("result");
-        var tbl = document.createElement("table");
-        var tblBody = document.createElement("tbody");
-        var row = document.createElement("tr");
-        for(var i = 0; i < 8; i++) {
-            var header = document.createElement("td");
-            var headerText = document.createTextNode(obj[keys[i]]);
-            header.appendChild(headerText);
-            row.appendChild(header);
-            // table += "<th>" + keys[i] + "</th>"; 
-        }
-        var index = j;
-        var cell = document.createElement("td");
-        var cellText = document.createTextNode(j);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-        tblBody.appendChild(row);
-        tbl.appendChild(tblBody);
-        // appends <table> into <body>
-        div.appendChild(tbl);
-        tbl.setAttribute("border", "2");
-        // div.innerHTML = tbl;
-    }
-    function planets(data, j){
-        var obj = JSON.parse(data);
-        console.log(obj);
-        console.log(obj.name);
-        var keys = ["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water"];
-        var div = document.getElementById("result");
-        var tbl = document.createElement("table");
-        var tblBody = document.createElement("tbody");
-        var row = document.createElement("tr");
-        for(var i = 0; i < 8; i++) {
-            var header = document.createElement("td");
-            var headerText = document.createTextNode(obj[keys[i]]);
-            header.appendChild(headerText);
-            row.appendChild(header);
-            // table += "<th>" + keys[i] + "</th>"; 
-        }
-        var index = j;
-        var cell = document.createElement("td");
-        var cellText = document.createTextNode(j);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-        tblBody.appendChild(row);
-        tbl.appendChild(tblBody);
-        // appends <table> into <body>
-        div.appendChild(tbl);
-        tbl.setAttribute("border", "2");
-        // div.innerHTML = tbl;
-    }
-    function species(data, j){
-        var obj = JSON.parse(data);
-        console.log(obj);
-        console.log(obj.name);
-        var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-        var div = document.getElementById("result");
-        var tbl = document.createElement("table");
-        var tblBody = document.createElement("tbody");
-        var row = document.createElement("tr");
-        for(var i = 0; i < 8; i++) {
-            var header = document.createElement("td");
-            var headerText = document.createTextNode(obj[keys[i]]);
-            header.appendChild(headerText);
-            row.appendChild(header);
-            // table += "<th>" + keys[i] + "</th>"; 
-        }
-        var index = j;
-        var cell = document.createElement("td");
-        var cellText = document.createTextNode(j);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-        tblBody.appendChild(row);
-        tbl.appendChild(tblBody);
-        // appends <table> into <body>
-        div.appendChild(tbl);
-        tbl.setAttribute("border", "2");
-        // div.innerHTML = tbl;
-    }
-    function starships(data, j){
-        var obj = JSON.parse(data);
-        console.log(obj);
-        console.log(obj.name);
-        var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-        var div = document.getElementById("result");
-        var tbl = document.createElement("table");
-        var tblBody = document.createElement("tbody");
-        var row = document.createElement("tr");
-        for(var i = 0; i < 8; i++) {
-            var header = document.createElement("td");
-            var headerText = document.createTextNode(obj[keys[i]]);
-            header.appendChild(headerText);
-            row.appendChild(header);
-            // table += "<th>" + keys[i] + "</th>"; 
-        }
-        var index = j;
-        var cell = document.createElement("td");
-        var cellText = document.createTextNode(j);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-        tblBody.appendChild(row);
-        tbl.appendChild(tblBody);
-        // appends <table> into <body>
-        div.appendChild(tbl);
-        tbl.setAttribute("border", "2");
-        // div.innerHTML = tbl;
-    }
-    function vehicles(data, j){
-        var obj = JSON.parse(data);
-        console.log(obj);
-        console.log(obj.name);
-        var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
         var div = document.getElementById("result");
         var tbl = document.createElement("table");
         var tblBody = document.createElement("tbody");
