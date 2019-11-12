@@ -17,13 +17,13 @@
             var url = "https://swapi.co/api/people/";
             // it = 0;
             for(var i = 1; i <= 89; i++) {
-                ajaxRequest(url + i + "/", i);
+                ajaxRequest(url + i + "/", i, type);
             }
 	  		break;
 	  	case "planets":
             var url = "https://swapi.co/api/planets/";
             for(var i = 1; i < 8; i++) {
-                ajaxRequest(url + i + "/", i);
+                ajaxRequest(url + i + "/", i, type);
             }
 	  		break;
 	  	case "species":
@@ -47,30 +47,13 @@
 		}
 	}
 
-    function ajaxRequest(url, i) {
+    function ajaxRequest(url, i, type) {
         
         var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
-                people(data, i);
-            // var type = document.getElementById("Country").value;
-	  	        // switch(type) {
-                //     case "people":
-                //         people(data, i);
-                //         break;
-                //     case "planets":
-                //         planets(data, i);
-                //         break;
-                //     case "species":
-                //         species(data, i);
-                //         break;
-                //     case "starships":
-                //         species(data, i);
-                //         break;
-                //     case "vehicles":
-                //         species(data, i);
-                //         break;
+                people(data, i, type);
             }
 	  	};
         xhttp.open("GET", url, true);
@@ -78,28 +61,28 @@
 
     }
 
-    function people(data, j){
+    function people(data, j, type){
         var obj = JSON.parse(data);
         console.log(obj);
         console.log(obj.name);
         var keys = [];
-        var type = document.getElementById("Country").value;
-            switch(type) {
-                case "people":
-                    keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-                    break;
-                case "planets":
-                    keys = ["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water"];
-                    break;
-                case "species":
-                    keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-                    break;
-                case "starships":
-                    keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-                    break;
-                case "vehicles":
-                    keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-                    break;
+        // var type = document.getElementById("Country").value;
+        switch(type) {
+            case "people":
+                keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+                break;
+            case "planets":
+                keys = ["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water"];
+                break;
+            case "species":
+                keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+                break;
+            case "starships":
+                keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+                break;
+            case "vehicles":
+                keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+                break;
         // var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
         var div = document.getElementById("result");
         var tbl = document.createElement("table");
