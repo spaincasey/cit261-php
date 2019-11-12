@@ -4,147 +4,124 @@
 	<link rel="stylesheet" type="text/css" href="local_storage.css"/>
 	<title>Casey Spain's Assign09</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+    var it = 0;
+    var table = "<table>";
+	function loadDoc() {
+        document.getElementById("result").innerHTML = "";
+		var type = document.getElementById("Country").value;
+	  	switch(type) {
+	  	case "people":
+            var url = "https://swapi.co/api/people/";
+            it = 0;
+            for(var i = 1; i < 89; i++) {
+                ajaxRequest(url + i + "/");
+            }
+	  		break;
+	  	case "planets":
+            var url = "https://swapi.co/api/planets/?page=";
+            for(var i = 1; i < 8; i++) {
+                ajaxRequest(url + i);
+            }
+	  		break;
+	  	case "species":
+            var url = "https://swapi.co/api/species/?page=";
+            for(var i = 1; i < 5; i++) {
+                ajaxRequest(url + i);
+            }
+	  		break;
+        case "starships":
+            var url = "https://swapi.co/api/starships/?page=";
+            for(var i = 1; i < 5; i++) {
+                ajaxRequest(url + i);
+            }
+	  		break;
+	  	case "vehicles":
+            var url = "https://swapi.co/api/vehicles/?page=";
+            for(var i = 1; i < 5; i++) {
+                ajaxRequest(url + i);
+            }
+	  		break;
+		}
+	}
+
+    function ajaxRequest(url) {
+        
+        var xhttp = new XMLHttpRequest();
+	  	xhttp.onreadystatechange = function() {
+	    	if (this.readyState == 4 && this.status == 200) {
+                var data = this.response;
+                // build2(data);
+                var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
+                table += build2(data);
+            }
+	  	};
+        xhttp.open("GET", url, true);
+        xhttp.send();
+
+    }
+
+    function build2(data){
+        var obj = JSON.parse(data);
+        console.log(obj); 
+        var add = "<td>" + obj.name + "</td>" + "<td>" + obj.height + "</td>" + "<td>" + obj.mass + "</td>" + "<td>" + obj.hair_color + "</td>" + "<td>" + obj.skin_color + "</td>" + "<td>" + obj.eye_color + "</td>" + "<td>" + obj.birth_year + "</td>" + "<td>" + obj.gender + "</td>" + "<td><button id='button" + it + "' type='button' onclick='addFavorite(" + it + ")'>favorite</button></td>";
+        // vare table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
+        
+    }
+
+    function build(data) {
+        // console.log(data);
+		var obj = JSON.parse(data);
+		var table = "<table><tr>";
+        var keys = [];
+        Object.keys(obj.results[1]).forEach(function(key) {
+            keys.push(key);
+        })
+        for(var i = 0; i < 8; i++) {
+            table += "<th>" + keys[i] + "</th>"; 
+        }
+        table += "<th>fav</th>";
+        table += "</tr>";
+        console.log("Length: " + obj.results.length);
+		for(var i = 0; i < obj.results.length; i++)
+		{
+            it++;
+            table += "<tr>";
+            for(var j = 0; j < 8; j++) {
+                table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
+            }
+            // table += "<td>" + it + "</td>";
+            table += "<td><button id='button" + it + "' type='button' onclick='addFavorite(" + it + ")'>favorite</button></td>";
+            // Object.keys(obj.results[i]).forEach(function(key) {
+            //     table += "<td>" + obj.results[i][key] + "</td>"; 
+            // })
+            table += "</tr>"
+            console.log("iterator:" + it);
+		}
+        
+		document.getElementById("result").innerHTML += table;
+	}
+    function addFavorite(index) {
+        var type = document.getElementById("Country").value;
+        var url = "https://swapi.co/api/" + type + "/" + index + "/";
+        var xhttp = new XMLHttpRequest();
+	  	xhttp.onreadystatechange = function() {
+	    	if (this.readyState == 4 && this.status == 200) {
+                var data = this.response;
+                console.log(data);
+                var obj = JSON.parse(data);
+                localStorage.setItem("Favorite", obj);
+            }
+	  	};
+        xhttp.open("GET", url, true);
+        xhttp.send();
+
+        var item = localStorage.getItem("lastname");
+        console.log(item);
+    }
+	</script>
 </head>
 <body>
-        <script>
-                // var it = 0;
-                // var table = "<table>";
-                function loadDoc() {
-                    document.getElementById("result").innerHTML = "";
-                    var type = document.getElementById("Country").value;
-                      switch(type) {
-                      case "people":
-                        people();
-                        // var url = "https://swapi.co/api/people/";
-                        // it = 0;
-                        // for(var i = 1; i < 89; i++) {
-                        //     ajaxRequest(url + i + "/");
-                        // }
-                          break;
-                      case "planets":
-                        var url = "https://swapi.co/api/planets/?page=";
-                        for(var i = 1; i < 8; i++) {
-                            ajaxRequest(url + i);
-                        }
-                          break;
-                      case "species":
-                        var url = "https://swapi.co/api/species/?page=";
-                        for(var i = 1; i < 5; i++) {
-                            ajaxRequest(url + i);
-                        }
-                          break;
-                    case "starships":
-                        var url = "https://swapi.co/api/starships/?page=";
-                        for(var i = 1; i < 5; i++) {
-                            ajaxRequest(url + i);
-                        }
-                          break;
-                      case "vehicles":
-                        var url = "https://swapi.co/api/vehicles/?page=";
-                        for(var i = 1; i < 5; i++) {
-                            ajaxRequest(url + i);
-                        }
-                          break;
-                    }
-                }
-                function people() {
-                    var url = "https://swapi.co/api/people/";
-                    var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
-                    for(var i = 1; i < 89; i++) {
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                                var data = this.response;
-                                consol.log(data);
-                                var obj = JSON.parse(data);
-                                consol.log(obj);
-
-                                // build2(data);
-                                // var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
-                                // table += build2(data);
-                            }
-                        };
-                        xhttp.open("GET", url + i + "/", true);
-                        xhttp.send();
-                        // ajaxRequest(url + i + "/");
-                    }
-                }
-            
-                function ajaxRequest(url) {
-                    
-                    var xhttp = new XMLHttpRequest();
-                      xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            var data = this.response;
-                            // build2(data);
-                            var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
-                            table += build2(data);
-                        }
-                      };
-                    xhttp.open("GET", url, true);
-                    xhttp.send();
-            
-                }
-            
-                function build2(data){
-                    var obj = JSON.parse(data);
-                    console.log(obj); 
-                    var add = "<td>" + obj.name + "</td>" + "<td>" + obj.height + "</td>" + "<td>" + obj.mass + "</td>" + "<td>" + obj.hair_color + "</td>" + "<td>" + obj.skin_color + "</td>" + "<td>" + obj.eye_color + "</td>" + "<td>" + obj.birth_year + "</td>" + "<td>" + obj.gender + "</td>" + "<td><button id='button" + it + "' type='button' onclick='addFavorite(" + it + ")'>favorite</button></td>";
-                    // vare table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
-                    
-                }
-            
-                function build(data) {
-                    // console.log(data);
-                    var obj = JSON.parse(data);
-                    var table = "<table><tr>";
-                    var keys = [];
-                    Object.keys(obj.results[1]).forEach(function(key) {
-                        keys.push(key);
-                    })
-                    for(var i = 0; i < 8; i++) {
-                        table += "<th>" + keys[i] + "</th>"; 
-                    }
-                    table += "<th>fav</th>";
-                    table += "</tr>";
-                    console.log("Length: " + obj.results.length);
-                    for(var i = 0; i < obj.results.length; i++)
-                    {
-                        it++;
-                        table += "<tr>";
-                        for(var j = 0; j < 8; j++) {
-                            table += "<td>" + obj.results[i][keys[j]] + "</td>"; 
-                        }
-                        // table += "<td>" + it + "</td>";
-                        table += "<td><button id='button" + it + "' type='button' onclick='addFavorite(" + it + ")'>favorite</button></td>";
-                        // Object.keys(obj.results[i]).forEach(function(key) {
-                        //     table += "<td>" + obj.results[i][key] + "</td>"; 
-                        // })
-                        table += "</tr>"
-                        console.log("iterator:" + it);
-                    }
-                    
-                    document.getElementById("result").innerHTML += table;
-                }
-                function addFavorite(index) {
-                    var type = document.getElementById("Country").value;
-                    var url = "https://swapi.co/api/" + type + "/" + index + "/";
-                    var xhttp = new XMLHttpRequest();
-                      xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            var data = this.response;
-                            console.log(data);
-                            var obj = JSON.parse(data);
-                            localStorage.setItem("Favorite", obj);
-                        }
-                      };
-                    xhttp.open("GET", url, true);
-                    xhttp.send();
-            
-                    var item = localStorage.getItem("lastname");
-                    console.log(item);
-                }
-                </script>   
 <div class="header">
     <br><br><br>
     <h1>Local Storage</h1>
