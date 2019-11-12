@@ -30,7 +30,7 @@
 	  	case "species":
             var url = "https://swapi.co/api/species/";
             var keys = ["name", "classification", "designation", "average_height", "skin_colors", "hair_colors", "eye_colors", "average_lifespan", "gender"];
-            for(var i = 1; i < 89; i++) {
+            for(var i = 1; i <= 37; i++) {
                 ajaxRequest(url + i + "/", i, keys);
             }
 	  		break;
