@@ -25,7 +25,7 @@
             var url = "https://swapi.co/api/planets/";
             var keys = ["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water"];
             for(var i = 1; i < 8; i++) {
-                ajaxRequest(url + i + "/", i, type);
+                ajaxRequest(url + i + "/", i, keys);
             }
 	  		break;
 	  	case "species":
