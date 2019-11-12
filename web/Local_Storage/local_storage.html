@@ -59,7 +59,7 @@
 
     }
 
-    function build2(data, i){
+    function build2(data, j){
         var obj = JSON.parse(data);
         console.log(obj);
         console.log(obj.name);
@@ -75,9 +75,9 @@
             row.appendChild(header);
             // table += "<th>" + keys[i] + "</th>"; 
         }
-        var index = i;
+        var index = j;
         var cell = document.createElement("td");
-        var cellText = document.createTextNode(i);
+        var cellText = document.createTextNode(j);
         cell.appendChild(cellText);
         row.appendChild(cell);
         tblBody.appendChild(row);
