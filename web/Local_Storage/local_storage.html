@@ -12,11 +12,12 @@
 		var type = document.getElementById("Country").value;
 	  	switch(type) {
 	  	case "people":
-            var url = "https://swapi.co/api/people/";
-            it = 0;
-            for(var i = 1; i < 89; i++) {
-                ajaxRequest(url + i + "/");
-            }
+            people();
+            // var url = "https://swapi.co/api/people/";
+            // it = 0;
+            // for(var i = 1; i < 89; i++) {
+            //     ajaxRequest(url + i + "/");
+            // }
 	  		break;
 	  	case "planets":
             var url = "https://swapi.co/api/planets/?page=";
@@ -44,6 +45,32 @@
 	  		break;
 		}
 	}
+    function people() {
+        var url = "https://swapi.co/api/people/";
+        var labels = ["Name", "Height", "Mass", "Hair_Color", "Skin Color", "Eye Color", "Birth Year", "Gender", "Fav"];
+        var tbl = document.createElement("table");
+        var tblBody = document.createElement("tbody");
+        var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
+        for(var i = 0; i < 9; i++) {
+            var header = document.createElement("tr");
+            var lable = document.createTextNode(labels[i]);
+            header.appendChild(label);
+        }
+        for(var i = 1; i < 89; i++) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = this.response;
+                    // build2(data);
+                    // var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
+                    table += build2(data);
+                }
+            };
+            xhttp.open("GET", url + i + "/", true);
+            xhttp.send();
+            // ajaxRequest(url + i + "/");
+        }
+    }
 
     function ajaxRequest(url) {
         
@@ -65,7 +92,7 @@
         var obj = JSON.parse(data);
         console.log(obj); 
         var add = "<td>" + obj.name + "</td>" + "<td>" + obj.height + "</td>" + "<td>" + obj.mass + "</td>" + "<td>" + obj.hair_color + "</td>" + "<td>" + obj.skin_color + "</td>" + "<td>" + obj.eye_color + "</td>" + "<td>" + obj.birth_year + "</td>" + "<td>" + obj.gender + "</td>" + "<td><button id='button" + it + "' type='button' onclick='addFavorite(" + it + ")'>favorite</button></td>";
-        // var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
+        // vare table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
         
     }
 
