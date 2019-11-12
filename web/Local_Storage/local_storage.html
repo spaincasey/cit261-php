@@ -17,13 +17,13 @@
             var url = "https://swapi.co/api/people/";
             // it = 0;
             for(var i = 1; i <= 89; i++) {
-                ajaxRequest(url + i + "/", i, type);
+                ajaxRequest(url + i + "/", i);
             }
 	  		break;
 	  	case "planets":
             var url = "https://swapi.co/api/planets/";
             for(var i = 1; i < 8; i++) {
-                ajaxRequest(url + i + "/", i, type);
+                ajaxRequest(url + i + "/", i);
             }
 	  		break;
 	  	case "species":
@@ -47,7 +47,7 @@
 		}
 	}
 
-    function ajaxRequest(url, i, type) {
+    function ajaxRequest(url, i) {
         
         var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
@@ -82,7 +82,25 @@
         var obj = JSON.parse(data);
         console.log(obj);
         console.log(obj.name);
-        var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+        var keys = [];
+        var type = document.getElementById("Country").value;
+            switch(type) {
+                case "people":
+                    keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+                    break;
+                case "planets":
+                    keys = ["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water"];
+                    break;
+                case "species":
+                    keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+                    break;
+                case "starships":
+                    keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+                    break;
+                case "vehicles":
+                    keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+                    break;
+        // var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
         var div = document.getElementById("result");
         var tbl = document.createElement("table");
         var tblBody = document.createElement("tbody");
