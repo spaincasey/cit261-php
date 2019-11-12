@@ -79,7 +79,8 @@
         tbl.appendChild(tblBody);
   // appends <table> into <body>
         div.appendChild(tbl);
-        div.innerHTML = tbl;
+        tbl.setAttribute("border", "2");
+        // div.innerHTML = tbl;
     }
 
     function build(data) {
