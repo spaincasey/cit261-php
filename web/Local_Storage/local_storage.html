@@ -15,19 +15,23 @@
 	  	switch(type) {
 	  	case "people":
             var url = "https://swapi.co/api/people/";
+            var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
             // it = 0;
             for(var i = 1; i <= 89; i++) {
-                ajaxRequest(url + i + "/", i, type);
+                ajaxRequest(url + i + "/", i, keys);
             }
 	  		break;
 	  	case "planets":
             var url = "https://swapi.co/api/planets/";
+            var keys = ["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water"];
             for(var i = 1; i < 8; i++) {
                 ajaxRequest(url + i + "/", i, type);
             }
 	  		break;
 	  	case "species":
             var url = "https://swapi.co/api/species/?page=";
+            var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+
             for(var i = 1; i < 5; i++) {
                 ajaxRequest(url + i);
             }
@@ -47,13 +51,13 @@
 		}
 	}
 
-    function ajaxRequest(url, i, type) {
+    function ajaxRequest(url, i, keys) {
         
         var xhttp = new XMLHttpRequest();
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
-                people(data, i, type);
+                people(data, i, keys);
             }
 	  	};
         xhttp.open("GET", url, true);
@@ -61,28 +65,13 @@
 
     }
 
-    function people(data, j, type){
+    function people(data, j, keys){
         var obj = JSON.parse(data);
         console.log(obj);
         console.log(obj.name);
-        var keys = [];
+        // var keys = [];
         // var type = document.getElementById("Country").value;
-        switch(type) {
-            case "people":
-                keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-                break;
-            case "planets":
-                keys = ["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water"];
-                break;
-            case "species":
-                keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-                break;
-            case "starships":
-                keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-                break;
-            case "vehicles":
-                keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
-                break;
+
         // var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
         var div = document.getElementById("result");
         var tbl = document.createElement("table");
