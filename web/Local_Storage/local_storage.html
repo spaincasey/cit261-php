@@ -46,15 +46,17 @@
 		}
 	}
     function people() {
+        var div = document.getElementById="result";
         var url = "https://swapi.co/api/people/";
         var labels = ["Name", "Height", "Mass", "Hair_Color", "Skin Color", "Eye Color", "Birth Year", "Gender", "Fav"];
         var tbl = document.createElement("table");
         var tblBody = document.createElement("tbody");
         var table  = "<table><tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th><th>Skin Color</th><th>Eye Color</th><th>Birth Year</th><th>Gender</th><th>Fav</th></tr>";
         for(var i = 0; i < 9; i++) {
-            var header = document.createElement("tr");
+            var row = document.createElement("tr");
             var lable = document.createTextNode(labels[i]);
             header.appendChild(label);
+            tblBody.appendChild(row);
         }
         for(var i = 1; i < 89; i++) {
             var xhttp = new XMLHttpRequest();
@@ -70,6 +72,10 @@
             xhttp.send();
             // ajaxRequest(url + i + "/");
         }
+        // put the <tbody> in the <table>
+        tbl.appendChild(tblBody);
+        // appends <table> into <body>
+        div.appendChild(tbl);
     }
 
     function ajaxRequest(url) {
@@ -167,9 +173,9 @@
 	</select>
       <button type="button" onclick="loadDoc()">Change Content</button>
     <div id="result" class="display">
-        <table id="table1">
+        <!-- <table id="table1">
 
-        </table>
+        </table> -->
     </div>
 </div>
 </body>
