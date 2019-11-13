@@ -21,10 +21,7 @@ h3 {
 }
 
 table {
-    -ms-transform: rotate(20deg); /* IE 9 */
-    -webkit-transform: rotate(20deg); /* Safari prior 9.0 */
-    transform: rotate(20deg); /* Standard syntax */
-    width: 100%;
+    transform: translate(0px, 200px);
 }
 
 table, th, td {
