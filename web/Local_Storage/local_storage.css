@@ -1,5 +1,27 @@
 body {
     background-color: #BCBEC5;
+    overflow-x: hidden;
+}
+
+
+.box-wrapper {
+    -webkit-transition-duration: 600ms;
+    transition-duration: 600ms;
+}
+
+
+.box-wrapper.loading:nth-child(odd) { transform: translate(100%) }
+.box-wrapper.loading:nth-child(even) { transform: translate(-100%) }
+
+
+.box-wrapper:nth-child(odd)  .box { background: orange }
+.box-wrapper:nth-child(even) .box { background: red }
+
+
+.box {
+    margin: auto;
+    width: 100px;
+    height: 100px;
 }
 
 h1 {
@@ -21,7 +43,10 @@ h3 {
 }
 
 table {
-    transform: translate(0px, 200px);
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari prior 9.0 */
+    transform: rotate(20deg); /* Standard syntax */
+    width: 100%;
 }
 
 table, th, td {
