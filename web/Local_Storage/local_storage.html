@@ -108,8 +108,9 @@
                 var data = this.response;
                 // console.log(data);
                 var obj = JSON.parse(data);
-                console.log(obj);
-                localStorage.setItem("Favorite", obj);
+                var str = JSON.stringify(obj);
+                console.log(str);
+                localStorage.setItem("Favorite", str);
             }
 	  	};
         xhttp.open("GET", url, true);
