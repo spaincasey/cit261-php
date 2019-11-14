@@ -8,7 +8,43 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="local_storage.css"/>
-  </head>
+    <script>
+    function loadData() {
+        var getObject = JSON.parse(localStorage.getItem('storeObj'));
+        // var item = localStorage.getItem("favorite");
+        for (const [key, value] of Object.entries(getObject)) {
+            document.getElementById(result).innerHTML += value;
+        }
+        console.log(getObject);
+        document.getElementById(result).innerHTML = getObject.name;
+        // for (var i = 0; i < localStorage.length; i++){
+        //     document.getElementById(result).innerHTML += localStorage.getItem(localStorage.key(i));
+        // }
+    }
+    function addFavorite(index) {
+        var type = document.getElementById("Country").value;
+        var url = "https://swapi.co/api/" + type + "/" + index + "/";
+        var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var data = this.response;
+                console.log(data);
+                // console.log(data);
+                var obj = JSON.parse(data);
+                var str = JSON.stringify(data);
+                console.log(str);
+                localStorage.setItem('storeObj', JSON.stringify(obj));
+                // localStorage.setItem("Favorite", data);
+            }
+            };
+        xhttp.open("GET", url, false);
+        xhttp.send();
+
+        var getObject = JSON.parse(localStorage.getItem('storeObj'));
+        // var item = localStorage.getItem("favorite");
+        console.log(getObject);
+    }
+    </script>
 </head>
 <body>
 <div class="topnav">
@@ -30,42 +66,6 @@
     </div>
 
 </div>
-	<script>
-    function loadData() {
-        var getObject = JSON.parse(localStorage.getItem('storeObj'));
-        // var item = localStorage.getItem("favorite");
-        for (const [key, value] of Object.entries(getObject)) {
-            document.getElementById(result).innerHTML += value;
-        }
-        console.log(getObject);
-        document.getElementById(result).innerHTML = getObject.name;
-        // for (var i = 0; i < localStorage.length; i++){
-        //     document.getElementById(result).innerHTML += localStorage.getItem(localStorage.key(i));
-        // }
-    }
-    function addFavorite(index) {
-        var type = document.getElementById("Country").value;
-        var url = "https://swapi.co/api/" + type + "/" + index + "/";
-        var xhttp = new XMLHttpRequest();
-	  	xhttp.onreadystatechange = function() {
-	    	if (this.readyState == 4 && this.status == 200) {
-                var data = this.response;
-                console.log(data);
-                // console.log(data);
-                var obj = JSON.parse(data);
-                var str = JSON.stringify(data);
-                console.log(str);
-                localStorage.setItem('storeObj', JSON.stringify(obj));
-                // localStorage.setItem("Favorite", data);
-            }
-	  	};
-        xhttp.open("GET", url, false);
-        xhttp.send();
-
-        var getObject = JSON.parse(localStorage.getItem('storeObj'));
-        // var item = localStorage.getItem("favorite");
-        console.log(getObject);
-    }
-    </script>
+	
 </body>
 </html>
