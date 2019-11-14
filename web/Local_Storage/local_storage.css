@@ -78,3 +78,18 @@ td {
     background-color: #373D51;
     padding: 3vh;
 }
+
+@keyframes example {
+    from {
+        bottom: 63px;
+    }
+    to { 
+        bottom: 400px;
+    }
+}
+
+.moveUp {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
