@@ -33,6 +33,17 @@ td {
     width: 12.5%;
 }
 
+@keyframes example {
+    0%   {left: 0px; top:200px;}
+    100% {left: 0px; top:0px;}
+}
+
+.moveUp {
+    position: relative;
+    animation-name: example;
+    animation-duration: 3s;
+}
+
 .center {
     display: block;
     margin-left: auto;
@@ -79,15 +90,4 @@ td {
     background-color: #373D51;
     padding: 3vh;
     padding-bottom: 50vh;
-}
-
-@keyframes example {
-    0%   {left: 0px; top:200px;}
-    100% {left: 0px; top:0px;}
-}
-
-.moveUp {
-    position: relative;
-    animation-name: example;
-    animation-duration: 3s;
 }
