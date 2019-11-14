@@ -7,8 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="local_storage.css"/>
     <script>
-    function loadData() {
-        var obj = JSON.parse(localStorage.getItem('storeObj'));
+    function load() {
+        for (var i = 0; i < localStorage.length; i++){
+            loadData(i);
+        }
+    }
+    function loadData(index) {
+        var obj = JSON.parse(localStorage.getItem(index));
         var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
         var div = document.getElementById("result");
         var tbl = document.createElement("table");
@@ -41,7 +46,7 @@
 <div class="center" id="demo">
         <br>
         <h3>Pick a Category</h3>
-        <button type="button" onclick="loadData()">Load Favorites</button>
+        <button type="button" onclick="load()">Load Favorites</button>
         <!-- <textarea id="display" rows="10" cols="80"></textarea>
     <br> -->
     <div class="display2">
