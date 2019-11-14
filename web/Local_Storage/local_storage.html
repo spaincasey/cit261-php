@@ -81,9 +81,8 @@
             row.appendChild(header);
             // table += "<th>" + keys[i] + "</th>"; 
         }
-        var index = j;
         var cell = document.createElement("td");
-        var cellText = document.createTextNode(j);
+        var cellText = document.createTextNode("<button id="{j}" type="button" onclick="loadDoc()">Change Content</button>");
         cell.appendChild(cellText);
         row.appendChild(cell);
         tblBody.appendChild(row);
