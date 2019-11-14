@@ -82,7 +82,7 @@
             // table += "<th>" + keys[i] + "</th>"; 
         }
         var cell = document.createElement("td");
-        var cellText = document.createTextNode("<button id="{j}" type="button" onclick="loadDoc()">Change Content</button>");
+        var cellText = document.createTextNode("<button id=" + j + " type='button' onclick='loadDoc()'>Change Content</button>");
         cell.appendChild(cellText);
         row.appendChild(cell);
         tblBody.appendChild(row);
