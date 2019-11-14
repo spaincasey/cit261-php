@@ -115,7 +115,7 @@
                 // localStorage.setItem("Favorite", data);
             }
 	  	};
-        xhttp.open("GET", url, true);
+        xhttp.open("GET", url, false);
         xhttp.send();
 
         var getObject = JSON.parse(localStorage.getItem('storeObj'));
