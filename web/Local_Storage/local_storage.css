@@ -50,6 +50,10 @@ td, th{
     animation-duration: 3s;
 }
 
+.table {
+    border: 1px solid black;
+}
+
 .center {
     display: block;
     margin-left: auto;
