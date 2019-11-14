@@ -29,7 +29,7 @@ table, th, td {
     color: white;
 }
 
-td {
+td, th{
     width: 12.5%;
 }
 
