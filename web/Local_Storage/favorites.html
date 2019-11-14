@@ -11,6 +11,25 @@
   </head>
 </head>
 <body>
+<div class="topnav">
+    <a href="local_storage.html">Home</a>
+    <a class="active" href="#home">Favorites</a>
+</div>
+<div class="header">
+    <br><br><br>
+    <h1>Local Storage</h1>
+</div>
+<div class="center" id="demo">
+        <br>
+        <h3>Pick a Category</h3>
+        <button type="button" onclick="loadData()">Load Favorites</button>
+        <!-- <textarea id="display" rows="10" cols="80"></textarea>
+    <br> -->
+    <div class="display">
+        <p id="result"></p>
+    </div>
+
+</div>
 	<script>
     function loadData() {
         var getObject = JSON.parse(localStorage.getItem('storeObj'));
@@ -48,24 +67,5 @@
         console.log(getObject);
     }
     </script>
-    <div class="topnav">
-        <a href="local_storage.html">Home</a>
-        <a class="active" href="#home">Favorites</a>
-    </div>
-    <div class="header">
-        <br><br><br>
-        <h1>Local Storage</h1>
-    </div>
-    <div class="center" id="demo">
-            <br>
-            <h3>Pick a Category</h3>
-            <button type="button" onclick="loadData()">Load Favorites</button>
-            <!-- <textarea id="display" rows="10" cols="80"></textarea>
-        <br> -->
-        <div class="display">
-            <p id="result"></p>
-        </div>
-
-    </div>
 </body>
 </html>
