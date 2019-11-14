@@ -10,13 +10,45 @@
     <link rel="stylesheet" type="text/css" href="local_storage.css"/>
     <script>
     function loadData() {
-        var getObject = JSON.parse(localStorage.getItem('storeObj'));
+        // var obj = JSON.parse(data);
+        var obj = JSON.parse(localStorage.getItem('storeObj'));
+        var keys = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"];
+        // console.log(obj);
+        // console.log(obj.name);
+        var div = document.getElementById("result");
+        var tbl = document.createElement("table");
+        var tblBody = document.createElement("tbody");
+        var row = document.createElement("tr");
+
+        for(var i = 0; i < 8; i++) {
+            var header = document.createElement("td");
+            var headerText = document.createTextNode(obj[keys[i]]);
+            header.appendChild(headerText);
+            row.appendChild(header);
+            // table += "<th>" + keys[i] + "</th>"; 
+        }
+        var cell = document.createElement("td");
+        var btn = document.createElement("input");
+        btn.setAttribute("id", j);
+        btn.setAttribute("type", "button");
+        btn.setAttribute("onclick", "addFavorite(" + j + ")");
+        btn.setAttribute("value", "Favorite");
+        // var cellText = document.createTextNode("<button id=" + j + " type='button' onclick='loadDoc()'>Change Content</button>");
+        cell.appendChild(btn);
+        row.appendChild(cell);
+        tblBody.appendChild(row);
+        tbl.appendChild(tblBody);
+        // appends <table> into <body>
+        div.appendChild(tbl);
+        tbl.setAttribute("border", "2");
+        tbl.classList.add("moveUp");
+        // var getObject = JSON.parse(localStorage.getItem('storeObj'));
         // var item = localStorage.getItem("favorite");
         // for (const [key, value] of Object.entries(getObject)) {
         //     document.getElementById(result).innerHTML += value;
         // }
-        console.log(getObject);
-        document.getElementById(result).innerHTML = getObject.name;
+        // console.log(getObject);
+        // document.getElementById(result).innerHTML = getObject.name;
         // for (var i = 0; i < localStorage.length; i++){
         //     document.getElementById(result).innerHTML += localStorage.getItem(localStorage.key(i));
         // }
