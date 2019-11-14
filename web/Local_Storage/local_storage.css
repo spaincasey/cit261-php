@@ -24,9 +24,15 @@ table {
     width: 100%;
 }
 
-table, th, td {
+table, td {
     border: 1px solid #BCBEC5;
     color: white;
+}
+
+th {
+    background-color: grey;
+    border: 1px solid #BCBEC5;
+    color: black;
 }
 
 td, th{
