@@ -35,7 +35,10 @@
     
     function deleteStorage() {
         localStorage.clear();
-        document.getElementById(result).innerHTML = '';
+        var div = document.getElementById("result");
+        while (div.firstChild) {
+            div.removeChild(myNode.firstChild);
+        }
     }
     </script>
 </head>
