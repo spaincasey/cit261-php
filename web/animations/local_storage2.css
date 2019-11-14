@@ -77,6 +77,8 @@ td {
     text-align: center;
     background-color: #373D51;
     padding: 3vh;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
 }
 
 @keyframes example {
