@@ -71,9 +71,10 @@
         console.log(obj.name);
         var div = document.getElementById("result");
         var tbl = document.createElement("table");
-        tbl.classList.add("moveUp");
+        
         var tblBody = document.createElement("tbody");
         var row = document.createElement("tr");
+        row.classList.add("moveUp");
         for(var i = 0; i < 8; i++) {
             var header = document.createElement("td");
             var headerText = document.createTextNode(obj[keys[i]]);
