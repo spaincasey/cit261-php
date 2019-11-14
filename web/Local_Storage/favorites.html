@@ -32,6 +32,10 @@
         tbl.setAttribute("border", "2");
         tbl.classList.add("moveUp");
     }
+    
+    function deleteStorage() {
+        localStorage.clear();
+    }
     </script>
 </head>
 <body>
@@ -66,6 +70,7 @@
         </div>
     <div id="result" class="display">
     </div>
+    <button type="button" onclick="deleteStorage()">Delete Favorites</button>
 
 </div>
 	
