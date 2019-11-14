@@ -12,9 +12,9 @@
     function loadData() {
         var getObject = JSON.parse(localStorage.getItem('storeObj'));
         // var item = localStorage.getItem("favorite");
-        for (const [key, value] of Object.entries(getObject)) {
-            document.getElementById(result).innerHTML += value;
-        }
+        // for (const [key, value] of Object.entries(getObject)) {
+        //     document.getElementById(result).innerHTML += value;
+        // }
         console.log(getObject);
         document.getElementById(result).innerHTML = getObject.name;
         // for (var i = 0; i < localStorage.length; i++){
