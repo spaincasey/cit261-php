@@ -117,16 +117,16 @@
                 var obj = JSON.parse(data);
                 var str = JSON.stringify(data);
                 console.log(str);
-                localStorage.setItem('storeObj', JSON.stringify(obj));
+                localStorage.setItem(localStorage.length, JSON.stringify(obj));
                 // localStorage.setItem("Favorite", data);
             }
 	  	};
         xhttp.open("GET", url, false);
         xhttp.send();
 
-        var getObject = JSON.parse(localStorage.getItem('storeObj'));
-        // var item = localStorage.getItem("favorite");
-        console.log(getObject);
+        // var getObject = JSON.parse(localStorage.getItem('storeObj'));
+        // // var item = localStorage.getItem("favorite");
+        // console.log(getObject);
     }
     </script>
 <div class="topnav">
