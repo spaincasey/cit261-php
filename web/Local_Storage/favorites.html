@@ -13,9 +13,13 @@
 <body onload="loadData()">
 	<script>
     function loadData() {
-        for (var i = 0; i < localStorage.length; i++){
-            document.getElementById(result).innerHTML += localStorage.getItem(localStorage.key(i));
-        }
+        var getObject = JSON.parse(localStorage.getItem('storeObj'));
+        // var item = localStorage.getItem("favorite");
+        console.log(getObject);
+        document.getElementById(result).innerHTML += getObject;
+        // for (var i = 0; i < localStorage.length; i++){
+        //     document.getElementById(result).innerHTML += localStorage.getItem(localStorage.key(i));
+        // }
     }
     function addFavorite(index) {
         var type = document.getElementById("Country").value;
