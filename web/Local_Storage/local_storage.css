@@ -90,4 +90,16 @@ td {
     background-color: #373D51;
     padding: 3vh;
     padding-bottom: 50vh;
+    
+}
+
+.display {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    text-align: center;
+    background-color: #373D51;
+    padding: 3vh;
+    padding-bottom: 0px;
 }
