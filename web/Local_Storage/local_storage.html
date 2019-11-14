@@ -82,8 +82,13 @@
             // table += "<th>" + keys[i] + "</th>"; 
         }
         var cell = document.createElement("td");
-        var cellText = document.createTextNode("<button id=" + j + " type='button' onclick='loadDoc()'>Change Content</button>");
-        cell.appendChild(cellText);
+        var btn = document.createElement("BUTTON");
+        btn.setAttribute("id", j);
+        btn.setAttribute("type", "button");
+        btn.setAttribute("onclick", "addFavorite");
+        btn.setAttribute("value", "Favorite");
+        // var cellText = document.createTextNode("<button id=" + j + " type='button' onclick='loadDoc()'>Change Content</button>");
+        cell.appendChild(btn);
         row.appendChild(cell);
         tblBody.appendChild(row);
         tbl.appendChild(tblBody);
