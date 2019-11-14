@@ -111,14 +111,16 @@
                 var obj = JSON.parse(data);
                 var str = JSON.stringify(data);
                 console.log(str);
-                localStorage.setItem("Favorite", data);
+                localStorage.setItem('storeObj', JSON.stringify(obj));
+                // localStorage.setItem("Favorite", data);
             }
 	  	};
         xhttp.open("GET", url, true);
         xhttp.send();
 
-        var item = localStorage.getItem("favorite");
-        console.log(item);
+        var getObject = JSON.parse(localStorage.getItem('storeObj'));
+        // var item = localStorage.getItem("favorite");
+        console.log(getObject);
     }
 	</script>
 <div class="header">
