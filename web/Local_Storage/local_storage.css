@@ -3,6 +3,27 @@ body {
     overflow-x: hidden;
 }
 
+
+.box-wrapper {
+    -webkit-transition-duration: 600ms;
+    transition-duration: 600ms;
+}
+
+
+.box-wrapper.loading:nth-child(odd) { transform: translate(100%) }
+.box-wrapper.loading:nth-child(even) { transform: translate(-100%) }
+
+
+.box-wrapper:nth-child(odd)  .box { background: orange }
+.box-wrapper:nth-child(even) .box { background: red }
+
+
+.box {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
 h1 {
     text-align: center;
     color: white;
@@ -35,20 +56,6 @@ table, th, td {
 
 td {
     width: 12.5%;
-}
-
-@keyframes example {
-    0%   {top: 400px}
-    100% {top: 0px}
-}
-
-/* The element to apply the animation to */
-div {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    animation-name: example;
-    animation-duration: 4s;
 }
 
 .center {
