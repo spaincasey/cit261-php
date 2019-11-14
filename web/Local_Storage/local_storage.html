@@ -106,6 +106,7 @@
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
+                console.log(data);
                 // console.log(data);
                 var obj = JSON.parse(data);
                 var str = JSON.stringify(data);
