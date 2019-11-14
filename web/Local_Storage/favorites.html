@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Casey Spain's Assign09</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="local_storage.css"/>
+  </head>
+</head>
+<body>
+	<script>
+    function addFavorite(index) {
+        var type = document.getElementById("Country").value;
+        var url = "https://swapi.co/api/" + type + "/" + index + "/";
+        var xhttp = new XMLHttpRequest();
+	  	xhttp.onreadystatechange = function() {
+	    	if (this.readyState == 4 && this.status == 200) {
+                var data = this.response;
+                console.log(data);
+                // console.log(data);
+                var obj = JSON.parse(data);
+                var str = JSON.stringify(data);
+                console.log(str);
+                localStorage.setItem('storeObj', JSON.stringify(obj));
+                // localStorage.setItem("Favorite", data);
+            }
+	  	};
+        xhttp.open("GET", url, false);
+        xhttp.send();
+
+        var getObject = JSON.parse(localStorage.getItem('storeObj'));
+        // var item = localStorage.getItem("favorite");
+        console.log(getObject);
+    }
+    </script>
+<div class="topnav">
+    <a href="local_storage.html">Home</a>
+    <a class="active" href="#home">Favorites</a>
+</div>
+<div class="header">
+    <br><br><br>
+    <h1>Local Storage</h1>
+</div>
+<div class="center" id="demo">
+  	<br>
+  	<h3>Pick a Category</h3>
+  	<!-- <textarea id="display" rows="10" cols="80"></textarea>
+	<br> -->
+    <div id="result" class="display">
+    </div>
+</div>
+</body>
+</html>
