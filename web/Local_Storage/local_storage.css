@@ -24,6 +24,24 @@ body {
     height: 100px;
 }
 
+/* @-webkit-keyframes MoveUpDown {
+    from {
+        bottom: 63px;
+    }
+    to { 
+        bottom: 400px;
+    }
+} */
+
+@keyframes example {
+    from {
+        bottom: 63px;
+    }
+    to { 
+        bottom: 400px;
+    }
+}
+
 h1 {
     text-align: center;
     color: white;
@@ -43,9 +61,9 @@ h3 {
 }
 
 table {
-    -ms-transform: rotate(20deg); /* IE 9 */
-    -webkit-transform: rotate(20deg); /* Safari prior 9.0 */
-    transform: rotate(20deg); /* Standard syntax */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;
     width: 100%;
 }
 
