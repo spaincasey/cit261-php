@@ -28,11 +28,12 @@ table {
 
 table, td {
     border: 1px solid #BCBEC5;
+    background-color: #D6DEE7;
     color: white;
 }
 
 th {
-    background-color: #9BA0A8;
+    background-color: #D6DEE7;
     border: 1px solid #BCBEC5;
     color: black;
 }
