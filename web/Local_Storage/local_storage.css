@@ -42,6 +42,12 @@ td, th{
     width: 11.1%;
 }
 
+tr {
+    -ms-transform: skewY(10deg); /* IE 9 */
+    -webkit-transform: skewY(10deg); /* Safari 3-8 */
+    transform: skewY(10deg);
+}
+
 audio, video{
     display: block;
     margin-left: auto;
