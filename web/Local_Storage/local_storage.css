@@ -52,8 +52,8 @@ audio, video{
     width: 80%;
     height: 80%;
     background: red;
-    transition: width, height 1s;
-    -webkit-transition: width, height 1s; 
+    transition: width 1s, height 1s;
+    -webkit-transition: width 1s, height 1s; 
 }
   
 .button1:hover {
