@@ -34,8 +34,8 @@ table, td {
 
 th {
     background-color: #000000;
-    border: 1px solid #BCBEC5;
-    color: #FFE81F;
+    border: 1px solid #000000;
+    color: white;
 }
 
 td, th{
