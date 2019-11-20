@@ -29,13 +29,13 @@ table {
 table, td {
     border: 1px solid #BCBEC5;
     background-color: #D6DEE7;
-    color: white;
+    color: #000000;
 }
 
 th {
-    background-color: #D6DEE7;
+    background-color: #000000;
     border: 1px solid #BCBEC5;
-    color: black;
+    color: #FFE81F;
 }
 
 td, th{
