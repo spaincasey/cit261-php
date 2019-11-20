@@ -8,6 +8,9 @@ h1 {
     text-align: center;
     color: #FFE81F;
     font-size: 8vh;
+    -ms-transform: skewY(-5deg); /* IE 9 */
+    -webkit-transform: skewY(-5deg); /* Safari 3-8 */
+    transform: skewY(-5deg);
 }
 
 h2 {
@@ -39,9 +42,6 @@ th {
 
 td, th{
     width: 11.1%;
-    -ms-transform: skewY(2deg); /* IE 9 */
-    -webkit-transform: skewY(2deg); /* Safari 3-8 */
-    transform: skewY(2deg);
 }
 
 audio, video{
