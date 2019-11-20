@@ -50,15 +50,14 @@ audio, video{
 
 .button1 {
     width: 80%;
-    height: 80%;
+    height: 100%;
     background: red;
-    transition: width 1s, height 1s;
-    -webkit-transition: width 1s, height 1s; 
+    transition: width 1s;
+    -webkit-transition: width 1s; 
 }
   
 .button1:hover {
     width: 100%;
-    height: 100%;
 }
 
 @keyframes fadeUp {
