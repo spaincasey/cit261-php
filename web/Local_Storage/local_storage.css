@@ -48,6 +48,18 @@ audio, video{
     margin-right: auto;
 }
 
+.button1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+    -webkit-transition: width 2s; /* Safari 3.1 to 6.0 */
+}
+  
+.button1:hover {
+    width: 300px;
+}
+
 @keyframes fadeUp {
     0%   {left: 0px; top:200px;}
     100% {left: 0px; top:0px;}
