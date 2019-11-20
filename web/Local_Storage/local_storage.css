@@ -1,5 +1,5 @@
 body {
-    background-color: #000000;
+    background-color: #373438;
     padding: 0%;
     margin: 0%;
 }
@@ -87,7 +87,7 @@ td, th{
 
 .header {
     margin-bottom: 0;
-    background-color: #2C8BCF;
+    background-color: #3D74AE;
     height: 300px;   
 }
 
@@ -120,7 +120,7 @@ td, th{
     margin-top: 0px;
     width: 90%;
     text-align: center;
-    background-color: #373D51;
+    background-color: #9BA0A8;
     padding: 3vh;
     padding-bottom: 50vh;
     padding-top: 0vh;
