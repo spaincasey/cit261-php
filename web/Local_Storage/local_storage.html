@@ -15,7 +15,7 @@
     function createCSS() {
         var stylesheet = document.styleSheets[1];
         console.log(stylesheet);
-        stylesheet.insertRule(".favorite {background-color: #3D74AE !important}", 0);
+        stylesheet.insertRule(".favorite {background-color: #3D74AE !important}", 1);
     }
 
     var it = 0;
@@ -134,7 +134,7 @@
         xhttp.open("GET", url, false);
         xhttp.send();
         var row = document.getElementById("row" + index);
-        row.setAttribute("class", "favorite");
+        row.classList.add("class", "favorite");
         // var getObject = JSON.parse(localStorage.getItem('storeObj'));
         // // var item = localStorage.getItem("favorite");
         // console.log(getObject);
