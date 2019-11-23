@@ -85,7 +85,7 @@
         var tbl = document.createElement("table");
         var tblBody = document.createElement("tbody");
         var row = document.createElement("tr");
-        row.setAttribute("id", "row" + j);
+        tbl.setAttribute("id", "tbl" + j);
         // console.log("row" + j);
         for(var i = 0; i < 8; i++) {
             var header = document.createElement("td");
@@ -133,9 +133,9 @@
 	  	};
         xhttp.open("GET", url, false);
         xhttp.send();
-        var row = document.getElementById("row" + index);
+        var tbl = document.getElementById("tbl" + index);
         // console.log("row" + index);
-        row.classList.add("favorite");
+        tbl.classList.add("favorite");
         console.log(row.classList);
         // var getObject = JSON.parse(localStorage.getItem('storeObj'));
         // // var item = localStorage.getItem("favorite");
