@@ -68,7 +68,7 @@
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
-                console.log(data);
+                // console.log(data);
                 build(data, i, keys);
             }
 	  	};
@@ -121,11 +121,11 @@
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
-                console.log(data);
+                // console.log(data);
                 // console.log(data);
                 var obj = JSON.parse(data);
                 var str = JSON.stringify(data);
-                console.log(str);
+                // console.log(str);
                 localStorage.setItem(localStorage.length, JSON.stringify(obj));
                 alert("Item added to Favorites");
                 // localStorage.setItem("Favorite", data);
