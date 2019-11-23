@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="local_storage.css"/>
   </head>
 </head>
-<body onload="createCSS()">
+<body>
 	<script>
     function createCSS() {
         var stylesheet = document.styleSheets[1];
@@ -144,7 +144,7 @@
     <a class="active" href="#home">Home</a>
     <a href="favorites.html">Favorites</a>
 </div>
-<div class="header">
+<div class="header" onload="createCSS()">
     <br>
     <br>
     <h1>Star Wars API Loader</h1>
