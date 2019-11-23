@@ -108,6 +108,8 @@
     }
 
     function addFavorite(index) {
+        var stylesheet = document.styleSheets[0];
+        console.log(stylesheet);
         var type = document.getElementById("Country").value;
         var url = "https://swapi.co/api/" + type + "/" + index + "/";
         var xhttp = new XMLHttpRequest();
@@ -178,6 +180,8 @@
         </table>
     </div>
     <div id="result" class="display">
+    </div>
+    <div id="result2" class="display">
     </div>
 </div>
 </body>
