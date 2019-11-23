@@ -15,7 +15,7 @@
     function createCSS() {
         var stylesheet = document.styleSheets[1];
         console.log(stylesheet);
-        stylesheet.insertRule(".favorite {background-color: #3D74AE !important;}", 1);
+        stylesheet.insertRule(".favorite {background-color: #3D74AE !important; color: white; -ms-transform: skewY(-5deg); /* IE 9 */-webkit-transform: skewY(-5deg); /* Safari 3-8 */transform: skewY(-5deg);}", 1);
     }
 
     var it = 0;
