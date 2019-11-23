@@ -14,7 +14,6 @@
 	<script>
     function createCSS() {
         var stylesheet = document.styleSheets[1];
-        console.log(stylesheet);
         stylesheet.insertRule(".favorite {background-color: #3D74AE !important; color: white !important;}", 1);
     }
 
@@ -102,7 +101,6 @@
         btn.setAttribute("onclick", "addFavorite(" + j + ")");
         btn.setAttribute("ontouch", "addFavorite(" + j + ")");
         btn.setAttribute("value", "Favorite");
-        // var cellText = document.createTextNode("<button id=" + j + " type='button' onclick='loadDoc()'>Change Content</button>");
         cell.appendChild(btn);
         row.appendChild(cell);
         tblBody.appendChild(row);
@@ -121,25 +119,17 @@
 	  	xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
-                // console.log(data);
-                // console.log(data);
                 var obj = JSON.parse(data);
                 var str = JSON.stringify(data);
-                // console.log(str);
                 localStorage.setItem(localStorage.length, JSON.stringify(obj));
                 alert("Item added to Favorites");
-                // localStorage.setItem("Favorite", data);
             }
 	  	};
         xhttp.open("GET", url, false);
         xhttp.send();
         var tbl = document.getElementById("tbl" + index);
-        // console.log("row" + index);
         tbl.classList.add("favorite");
         console.log(row.classList);
-        // var getObject = JSON.parse(localStorage.getItem('storeObj'));
-        // // var item = localStorage.getItem("favorite");
-        // console.log(getObject);
     }
     </script>
 <div class="topnav">
