@@ -134,8 +134,9 @@
         xhttp.open("GET", url, false);
         xhttp.send();
         var row = document.getElementById("row" + index);
-        console.log("row" + index);
+        // console.log("row" + index);
         row.classList.add("favorite");
+        console.log(row.classList);
         // var getObject = JSON.parse(localStorage.getItem('storeObj'));
         // // var item = localStorage.getItem("favorite");
         // console.log(getObject);
