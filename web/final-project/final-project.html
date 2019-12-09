@@ -29,7 +29,7 @@
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
                 // console.log(data);
-                console.log(JSON.parse(this.responseText));
+                console.log(JSON.parse(data));
             }
 	  	};
         xhttp.open("GET", url, true);
