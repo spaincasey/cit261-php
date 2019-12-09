@@ -27,11 +27,12 @@
 
         //call fetch with our url...remember that fetch returns a Promise
         //that must be processed with a call to the .then() method.
+        var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
                 // console.log(data);
-                console.log(JSON.parse(data));
+                console.log(JSON.parse(this.responseText));
             }
 	  	};
         xhttp.open("GET", url, true);
