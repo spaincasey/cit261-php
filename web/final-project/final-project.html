@@ -34,18 +34,18 @@
 	  	};
         xhttp.open("GET", url, true);
         xhttp.send();
-        // fetch(url)
-        //     .then(function(response) {
-        //     // fetch also returns a stream as the result...we have to tell it
-        //     // how to format the stream...our choices are: json, text, or blob (binary data)
-        //     return response.json();
-        //     // the json() method also returns a promise...so we need
-        //     //to call .then() on it as well (shown on the next line)
-        // })
-        // .then(function(data) {
-        //     // we now have our data and can use it to update our page.
-        //     updateResultList(data);
-        // });
+        fetch(url)
+            .then(function(response) {
+            // fetch also returns a stream as the result...we have to tell it
+            // how to format the stream...our choices are: json, text, or blob (binary data)
+            return response.json();
+            // the json() method also returns a promise...so we need
+            //to call .then() on it as well (shown on the next line)
+        })
+        .then(function(data) {
+            // we now have our data and can use it to update our page.
+            updateResultList(data);
+        });
     }
 
     function updateResultList(data) {
