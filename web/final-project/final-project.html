@@ -12,10 +12,6 @@
 </head>
 <body onload="createCSS()">
 	<script>
-    function createCSS() {
-        var stylesheet = document.styleSheets[1];
-        stylesheet.insertRule(".favorite {background-color: #3D74AE !important; color: white !important;}", 1);
-    }
 
     var it = 0;
     var table = "<table>";
@@ -31,18 +27,27 @@
 
         //call fetch with our url...remember that fetch returns a Promise
         //that must be processed with a call to the .then() method.
-        fetch(url)
-            .then(function(response) {
-            // fetch also returns a stream as the result...we have to tell it
-            // how to format the stream...our choices are: json, text, or blob (binary data)
-            return response.json();
-            // the json() method also returns a promise...so we need
-            //to call .then() on it as well (shown on the next line)
-        })
-        .then(function(data) {
-            // we now have our data and can use it to update our page.
-            updateResultList(data);
-        });
+        xhttp.onreadystatechange = function() {
+	    	if (this.readyState == 4 && this.status == 200) {
+                var data = this.response;
+                // console.log(data);
+                console.log(JSON.parse(this.responseText));
+            }
+	  	};
+        xhttp.open("GET", url, true);
+        xhttp.send();
+        // fetch(url)
+        //     .then(function(response) {
+        //     // fetch also returns a stream as the result...we have to tell it
+        //     // how to format the stream...our choices are: json, text, or blob (binary data)
+        //     return response.json();
+        //     // the json() method also returns a promise...so we need
+        //     //to call .then() on it as well (shown on the next line)
+        // })
+        // .then(function(data) {
+        //     // we now have our data and can use it to update our page.
+        //     updateResultList(data);
+        // });
     }
 
     function updateResultList(data) {
