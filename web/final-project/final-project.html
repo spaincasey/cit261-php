@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Casey Spain's Assign09</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="local_storage.css"/>
+  </head>
+</head>
+<body onload="createCSS()">
+	<script>
+    function createCSS() {
+        var stylesheet = document.styleSheets[1];
+        stylesheet.insertRule(".favorite {background-color: #3D74AE !important; color: white !important;}", 1);
+    }
+
+    var it = 0;
+    var table = "<table>";
+
+
+    function ajaxRequest(url, i, keys) {
+    }
+
+    function build(data, j, keys){
+    }
+
+    function addFavorite(index) {
+    }
+    </script>
+<div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="favorites.html">Favorites</a>
+</div>
+<div class="header">
+    <br>
+    <br>
+    <h1>Star Wars API Loader</h1>
+</div>
+<div class="center" id="demo">
+  	<br>
+  	<h3>Pick a Category</h3>
+  	<!-- <textarea id="display" rows="10" cols="80"></textarea>
+	<br> -->
+  	<select id="Country">
+  		<option value="people" selected>People</option>
+		<option value="planets">Planets</option>
+        <option value="species">Species</option>
+        <option value="starships">Starships</option>
+        <option value="vehicles">Vehicles</option>
+	</select>
+      <button type="button" onclick="loadDoc()">Change Content</button>
+    <div class="display2">
+        <table id="table1">
+            <tr>
+                <th>Name</th>
+                <th>Height</th>
+                <th>Mass</th>
+                <th>Hair Color</th>
+                <th>Skin Color</th>
+                <th>Eye Color</th>
+                <th>Birth Year</th>
+                <th>Gender</th>
+                <th>Favorite</th>
+            </tr>
+        </table>
+    </div>
+    <div id="result" class="display">
+    </div>
+    <div id="result2" class="display">
+    </div>
+</div>
+</body>
+</html>
