@@ -100,6 +100,7 @@
 	    	if (this.readyState == 4 && this.status == 200) {
                 var data = this.response;
                 parsed = JSON.parse(data);
+                console.log(parsed.Title);
                 localStorage.setItem(favorite + localStorage.length, parsed.Title);
                 alert("Movie Added to Collection");
             }
