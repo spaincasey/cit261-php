@@ -160,3 +160,7 @@ audio, video{
     padding: 3vh;
     padding-bottom: 0px;
 }
+
+.thumbnail {
+    margin: 5px;
+}
