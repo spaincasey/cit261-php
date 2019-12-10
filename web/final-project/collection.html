@@ -10,9 +10,11 @@
         const resultList = document.getElementById('divResults');
         resultList.innerHTML = '';
         for (var i = 0; i < localStorage.length; i++){
-            loadItem(localStorage.key(i));
+            var key = localStorage.key(i);
+            loadItem(localStorage[key]);
         }
     }
+
     function loadItem(name) {
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&s=' + name;
         var xhttp = new XMLHttpRequest();
