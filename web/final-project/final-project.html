@@ -16,13 +16,11 @@
         // Get the value from the search box
         var searchString = document.getElementById('txtSearch').value;
         console.log('Searching for: ' + searchString);
-
         // Set up the parameters to send to the API
         // var params =
         //     '?apikey=5797b0b&s=' + encodeURIComponent(searchString);
         // var url = 'https://www.omdbapi.com/' + params;
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&s=' + encodeURIComponent(searchString);
-
         //call fetch with our url...remember that fetch returns a Promise
         //that must be processed with a call to the .then() method.
         var xhttp = new XMLHttpRequest();
@@ -40,50 +38,21 @@
     }
 
     function updateResultList(data) {
-    console.log('UpdateResultList');
-    console.log(data);
+        if (data.Search && data.Search.length > 0) {
+            const resultList = document.getElementById('ulResults');
+            resultList.innerHTML = '';
+            // you could use a forEach here as well...it would change the following line like this:
+            data.Search.forEach(function(item){
+                const title = item.Title;
+                console.log('Adding: ' + title);
+                const content = `<li><p>${title}</p></li>`;
+                resultList.innerHTML += content;
 
-    if (data.Search && data.Search.length > 0) {
-        const resultList = document.getElementById('ulResults');
-        resultList.innerHTML = '';
-
-        // you could use a forEach here as well...it would change the following line like this:
-        data.Search.forEach(function(item){
-            const title = item.Title;
-
-            console.log('Adding: ' + title);
-            const content = `<li><p>${title}</p></li>`;
-            resultList.innerHTML += content;
-         })
-        // for (let i = 0; i < data.Search.length; i++) {
-        // const title = data.Search[i].Title;
-
-        // console.log('Adding: ' + title);
-        // const content = `<li><p>${title}</p></li>`;
-        // resultList.innerHTML += content;
-        // }
-    }
-    }
-
-
-    function ajaxRequest() {
-        url = 'https://api.github.com/users';
-        var xhttp = new XMLHttpRequest();
-	  	xhttp.onreadystatechange = function() {
-	    	if (this.readyState == 4 && this.status == 200) {
-                var data = this.response;
-                // console.log(data);
-                console.log(JSON.parse(this.responseText));
-            }
-	  	};
-        xhttp.open("GET", url, true);
-        xhttp.send();
-    }
-
-    function build(data, j, keys){
-    }
-
-    function addFavorite(index) {
+                const poster = item.poster;
+                const content2 = "<img src='${poster}'/>";
+                
+            })
+        }
     }
     </script>
 <div class="topnav">
