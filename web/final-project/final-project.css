@@ -21,6 +21,7 @@ h2, h3 {
 
 .button1{
     background: #3D74AE;
+    width: 55px;
     transition: width 1s;
     -webkit-transition: width 1s; 
 }
@@ -31,6 +32,7 @@ h2, h3 {
 
 .button2{
     background: #3D74AE;
+    width: 140px;
     transition: width 1s;
     -webkit-transition: width 1s; 
 }
