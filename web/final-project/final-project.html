@@ -62,6 +62,7 @@
 
     function singleItem(data) {
         console.log(data);
+        console.log(data.Title);
         if (data.Search && data.Search.length > 0) {
             const resultList = document.getElementById('divResults');
             resultList.innerHTML = '';
