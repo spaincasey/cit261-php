@@ -165,3 +165,10 @@ audio, video{
     margin: 5px;
     width: 30%;
 }
+
+.selected {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
