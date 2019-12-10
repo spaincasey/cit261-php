@@ -174,7 +174,12 @@ audio, video{
 
 .thumbnail {
     margin: 5px;
-    width: 30%; 
+    width: 28%; 
+    transition: width 1s;
+    -webkit-transition: width 1s; 
+}
+.thumbnail:hover {
+    width: 31%;
 }
 
 .selected {
@@ -185,6 +190,23 @@ audio, video{
 
 @media only screen and (min-device-width: 400px) {
     .thumbnail {
-        width: 18%; 
+        width: 16%; 
+        transition: width 1s;
+        -webkit-transition: width 1s; 
     }
+    .thumbnail:hover {
+        width: 18%;
+    }
+}
+
+.button1 {
+    width: 80%;
+    height: 100%;
+    background: red;
+    transition: width 1s;
+    -webkit-transition: width 1s; 
+}
+  
+.button1:hover {
+    width: 100%;
 }
