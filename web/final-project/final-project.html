@@ -10,13 +10,7 @@
         // Get the value from the search box
         var searchString = document.getElementById('txtSearch').value;
         console.log('Searching for: ' + searchString);
-        // Set up the parameters to send to the API
-        // var params =
-        //     '?apikey=5797b0b&s=' + encodeURIComponent(searchString);
-        // var url = 'https://www.omdbapi.com/' + params;
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&s=' + encodeURIComponent(searchString);
-        //call fetch with our url...remember that fetch returns a Promise
-        //that must be processed with a call to the .then() method.
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
@@ -41,7 +35,6 @@
                 // console.log('Adding: ' + title);
                 // const content = `<li><p>${title}</p></li>`;
                 // resultList.innerHTML += content;
-
                 const poster = item.Poster;
 
                 const content2 = `<img onclick='searchItem("${title}");' class='thumbnail' src='${poster}' alt='${title}'/>`;
@@ -51,17 +44,8 @@
     }
 
     function searchItem(name) {
-        // // Get the value from the search box
-        // var searchString = document.getElementById('txtSearch').value;
-        // console.log('Searching for: ' + searchString);
-        // // Set up the parameters to send to the API
-        // // var params =
-        // //     '?apikey=5797b0b&s=' + encodeURIComponent(searchString);
-        // // var url = 'https://www.omdbapi.com/' + params;
         console.log(name);
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
-        //call fetch with our url...remember that fetch returns a Promise
-        //that must be processed with a call to the .then() method.
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
@@ -74,6 +58,18 @@
 	  	};
         xhttp.open("GET", url, true);
         xhttp.send();
+    }
+
+    function singleItem(data) {
+        if (data.Search && data.Search.length == 1) {
+            const resultList = document.getElementById('divResults');
+            resultList.innerHTML = '';
+            poster = data.Search[0].Poster;
+            title = data.Search[0].Title;
+            year = data.Search[0].Year;
+            content = `<img src='${poster}' alt='${title}'/><br><h3>${title}</h3><h3>Year: ${title}</h3>`
+            resultList.innerHTML = 
+        }
     }
     </script>
 </head>
