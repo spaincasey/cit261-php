@@ -190,12 +190,12 @@ audio, video{
 
 @media only screen and (min-device-width: 400px) {
     .thumbnail {
-        width: 16%; 
+        width: 17%; 
         transition: width 1s;
         -webkit-transition: width 1s; 
     }
     .thumbnail:hover {
-        width: 18%;
+        width: 19%;
     }
 }
 
