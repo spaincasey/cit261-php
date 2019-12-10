@@ -110,7 +110,7 @@ audio, video{
     margin-right: auto;
     margin-bottom: 0;
     background-color: #3D74AE;
-    height: 100%;   
+    width: 100%;   
 }
 
 .form {
