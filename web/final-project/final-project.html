@@ -79,13 +79,13 @@
         imdbRate = data.imdbRating;
         content = `<img class='selected' src='${poster}' alt='${title}'/><br>
                     <h3>${title}</h3>
-                    <p>Year: ${year}</p>
-                    <p>Actors: ${actors}</p>
-                    <p>Director: ${director}</p>
-                    <p>Plot: ${plot}</p>
-                    <p>Rating: ${rating}</p>
-                    <p>Runtime: ${runtime}</p>
-                    <p>imdb Rating: ${imdbRate}</p>`;
+                    <p><strong>Year:</strong> ${year}</p>
+                    <p><strong>Actors:</strong> ${actors}</p>
+                    <p><strong>Director:</strong> ${director}</p>
+                    <p><strong>Plot:</strong> ${plot}</p>
+                    <p><strong>Rating:</strong> ${rating}</p>
+                    <p><strong>Runtime:</strong> ${runtime}</p>
+                    <p><strong>imdb Rating:</strong> ${imdbRate}</p>`;
         resultList.innerHTML = content;
     }
     </script>
