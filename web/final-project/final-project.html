@@ -59,7 +59,7 @@
         // //     '?apikey=5797b0b&s=' + encodeURIComponent(searchString);
         // // var url = 'https://www.omdbapi.com/' + params;
         console.log(name);
-        var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&s=' + encodeURIComponent(name);
+        var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
         //call fetch with our url...remember that fetch returns a Promise
         //that must be processed with a call to the .then() method.
         var xhttp = new XMLHttpRequest();
