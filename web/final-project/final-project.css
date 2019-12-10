@@ -30,7 +30,7 @@ h2, h3 {
 }
 
 .button2:hover {
-    width: 100px;
+    width: 300px;
 }
 
 @keyframes fadeUp {
@@ -90,6 +90,7 @@ h2, h3 {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 300px;
     width: 100%;
     text-align: center;
     background-color: #9BA0A8;
