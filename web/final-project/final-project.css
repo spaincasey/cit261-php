@@ -161,6 +161,17 @@ audio, video{
     padding-bottom: 0px;
 }
 
+.details {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: right;
+    background-color: #9BA0A8;
+    padding: 3vh;
+    padding-bottom: 0px;
+}
+
 .thumbnail {
     margin: 5px;
     width: 30%; 
