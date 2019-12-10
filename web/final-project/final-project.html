@@ -33,7 +33,7 @@
 
     function updateResultList(data) {
         if (data.Search && data.Search.length > 0) {
-            const resultList = document.getElementById('ulResults');
+            const resultList = document.getElementById('divResults');
             resultList.innerHTML = '';
             // you could use a forEach here as well...it would change the following line like this:
             data.Search.forEach(function(item){
