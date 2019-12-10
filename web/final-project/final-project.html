@@ -101,7 +101,7 @@
                 var data = this.response;
                 parsed = JSON.parse(data);
                 console.log("Adding: " + parsed.Title);
-                localStorage.setItem(favorite + localStorage.length, parsed.Title);
+                localStorage.setItem("favorite" + localStorage.length, parsed.Title);
                 alert("Movie Added to Collection");
             }
 	  	};
