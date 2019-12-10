@@ -150,11 +150,11 @@ audio, video{
     padding-top: 0vh;
 }
 
-.display2 {
+.divResults {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 100%;
     text-align: center;
     background-color: #9BA0A8;
     padding: 3vh;
