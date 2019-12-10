@@ -11,7 +11,10 @@
         resultList.innerHTML = '';
         for (var i = 0; i < localStorage.length; i++){
             var key = localStorage.key(i);
-            loadItem(localStorage[key]);
+            var value = localStorage[key];
+            console.log("The Key is: " + key);
+            console.log("The Value is: " + value);
+            loadItem(value);
         }
     }
 
