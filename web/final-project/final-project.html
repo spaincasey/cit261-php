@@ -35,10 +35,9 @@
                 // console.log('Adding: ' + title);
                 // const content = `<li><p>${title}</p></li>`;
                 // resultList.innerHTML += content;
-                if(item.Poster != '')
+                if(item.Poster)
                 {
                     const poster = item.Poster;
-
                     const content2 = `<img onclick='searchItem("${title}");' class='thumbnail' src='${poster}' alt='${title}'/>`;
                     resultList.innerHTML += content2;
                 }
