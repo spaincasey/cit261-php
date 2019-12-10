@@ -48,8 +48,9 @@
         resultList.innerHTML = '';
 
         // you could use a forEach here as well...it would change the following line like this:
-        data.Search.forEach(function(item){ 
-            const content2 = `<li><p>${title}</p></li>`;
+        data.Search.forEach(function(item){
+            const title2 = item.Title; 
+            const content2 = `<li><p>${title2}</p></li>`;
             resultList.innerHTML += content;
          })
         for (let i = 0; i < data.Search.length; i++) {
