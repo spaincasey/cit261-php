@@ -61,9 +61,10 @@
     }
 
     function singleItem(data) {
-        console.log(data);
-        console.log(data.Title);
-        if (data.Search && data.Search.length > 0) {
+        // console.log(data);
+        // console.log(data.Title);
+        if (data.Search && data.Search.length >= 0) {
+            console.log("Single Item: ");
             const resultList = document.getElementById('divResults');
             resultList.innerHTML = '';
             poster = data.Poster;
