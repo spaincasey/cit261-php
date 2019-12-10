@@ -19,7 +19,7 @@
     }
 
     function loadItem(name) {
-        var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&s=' + name;
+        var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
@@ -34,16 +34,10 @@
     function updateResultList(data) {
         if (data.Search && data.Search.length > 0) {
             const resultList = document.getElementById('divResults');
-            resultList.innerHTML = '';
-            data.Search.forEach(function(item){
-                const title = item.Title;
-                console.log(item);
-                if(item.Poster != 'N/A'){
-                    const poster = item.Poster;
-                    const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
-                    resultList.innerHTML += content2;
-                }
-            })
+            const title = data.Title;
+            const poster = data.Poster;
+            const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
+            resultList.innerHTML += content2;
         }
     }
     
