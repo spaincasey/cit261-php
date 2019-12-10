@@ -163,7 +163,7 @@ audio, video{
 
 .thumbnail {
     margin: 5px;
-    width: 18%; 
+    width: 32%; 
 }
 
 .selected {
@@ -174,6 +174,6 @@ audio, video{
 
 @media only screen and (min-device-width: 400px) {
     .thumbnail {
-        width: 32%; 
+        width: 18%; 
     }
-  }
+}
