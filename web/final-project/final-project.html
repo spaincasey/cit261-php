@@ -61,7 +61,7 @@
     }
 
     function singleItem(data) {
-        if (data.Search && data.Search.length == 1) {
+        if (data.Search && data.Search.length > 0) {
             const resultList = document.getElementById('divResults');
             resultList.innerHTML = '';
             poster = data.Search[0].Poster;
