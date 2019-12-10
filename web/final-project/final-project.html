@@ -65,8 +65,11 @@
             const resultList = document.getElementById('divResults');
             resultList.innerHTML = '';
             poster = data.Search[0].Poster;
+            console.log(poster);
             title = data.Search[0].Title;
+            console.log(title);
             year = data.Search[0].Year;
+            console.log(year);
             content = `<img src='${poster}' alt='${title}'/><br><h3>${title}</h3><h3>Year: ${title}</h3>`;
             resultList.innerHTML = content;
         }
