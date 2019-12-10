@@ -37,18 +37,6 @@
 	  	};
         xhttp.open("GET", url, true);
         xhttp.send();
-        // fetch(url)
-        //     .then(function(response) {
-        //     // fetch also returns a stream as the result...we have to tell it
-        //     // how to format the stream...our choices are: json, text, or blob (binary data)
-        //     return response.json();
-        //     // the json() method also returns a promise...so we need
-        //     //to call .then() on it as well (shown on the next line)
-        // })
-        // .then(function(data) {
-        //     // we now have our data and can use it to update our page.
-        //     updateResultList(data);
-        // });
     }
 
     function updateResultList(data) {
@@ -60,7 +48,10 @@
         resultList.innerHTML = '';
 
         // you could use a forEach here as well...it would change the following line like this:
-        // data.Search.forEach(function(item){ ...process each item here })
+        data.Search.forEach(function(item){ 
+            const content2 = `<li><p>${title}</p></li>`;
+            resultList.innerHTML += content;
+         })
         for (let i = 0; i < data.Search.length; i++) {
         const title = data.Search[i].Title;
 
