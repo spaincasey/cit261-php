@@ -26,7 +26,7 @@ h2, h3 {
 }
   
 .button1:hover {
-    width: 5vw;
+    width: 20px;
 }
 
 @keyframes fadeUp {
