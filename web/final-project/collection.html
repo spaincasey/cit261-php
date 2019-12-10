@@ -36,15 +36,13 @@
     }
 
     function updateResultList(data) {
-        if (data.Search && data.Search.length > 0) {
-            const resultList = document.getElementById('divResults');
-            const title = data.Title;
-            console.log(title);
-            const poster = data.Poster;
-            console.log(poster);
-            const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
-            resultList.innerHTML += content2;
-        }
+        const resultList = document.getElementById('divResults');
+        const title = data.Title;
+        console.log(title);
+        const poster = data.Poster;
+        console.log(poster);
+        const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
+        resultList.innerHTML += content2;
     }
     
     </script>
