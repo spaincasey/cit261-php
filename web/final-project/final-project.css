@@ -13,47 +13,14 @@ h1 {
     transform: skewY(-5deg);
 }
 
-h2 {
+h2, h3 {
     text-align: center;
     color: #373F47;
     font-size: 5vh;
-}
-
-h3 {
-    text-align: center;
-    color: #373F47;
-    font-size: 5vh;
-}
-
-table {
-    width: 100%;
-    background-color: #D6DEE7;
-}
-
-td {
-    color: #000000;
-}
-
-th {
-    background-color: #000000;
-    border: 1px solid #000000;
-    color: white;
-}
-
-td, th{
-    width: 11.1%;
-}
-
-audio, video{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .button1 {
-    width: 80%;
-    height: 100%;
-    background: red;
+    background: #3D74AE;
     transition: width 1s;
     -webkit-transition: width 1s; 
 }
@@ -115,41 +82,6 @@ audio, video{
     height: 100%;   
 }
 
-.form {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    text-align: left;
-    background-color: white;
-    padding: 3vh;
-}
-
-.column {
-    float: left;
-    width: 50%;
-  }
-  
-  /* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.display {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
-    width: 90%;
-    text-align: center;
-    background-color: #9BA0A8;
-    padding: 3vh;
-    padding-bottom: 50vh;
-    padding-top: 0vh;
-}
-
 .divResults {
     display: block;
     margin-left: auto;
@@ -197,16 +129,4 @@ audio, video{
     .thumbnail:hover {
         width: 19%;
     }
-}
-
-.button1 {
-    width: 80%;
-    height: 100%;
-    background: red;
-    transition: width 1s;
-    -webkit-transition: width 1s; 
-}
-  
-.button1:hover {
-    width: 100%;
 }

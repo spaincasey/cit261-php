@@ -13,15 +13,47 @@ h1 {
     transform: skewY(-5deg);
 }
 
-h2, h3 {
+h2 {
     text-align: center;
     color: #FFE81F;
     font-size: 5vh;
 }
 
+h3 {
+    text-align: center;
+    color: #FFE81F;
+    font-size: 5vh;
+}
+
+table {
+    width: 100%;
+    background-color: #D6DEE7;
+}
+
+td {
+    color: #000000;
+}
+
+th {
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: white;
+}
+
+td, th{
+    width: 11.1%;
+}
+
+audio, video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .button1 {
-    background: #3D74AE;
+    width: 80%;
+    height: 100%;
+    background: red;
     transition: width 1s;
     -webkit-transition: width 1s; 
 }
@@ -80,6 +112,7 @@ h2, h3 {
     margin-right: auto;
     margin-bottom: 0;
     background-color: #3D74AE;
+    height: 100%;   
 }
 
 .form {
