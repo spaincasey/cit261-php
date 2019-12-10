@@ -19,7 +19,7 @@ h2, h3 {
     font-size: 5vh;
 }
 
-.button1 {
+.button1, .button2 {
     background: #3D74AE;
     transition: width 1s;
     -webkit-transition: width 1s; 
@@ -27,6 +27,10 @@ h2, h3 {
   
 .button1:hover {
     width: 65px;
+}
+
+.button2:hover {
+    width: 100px;
 }
 
 @keyframes fadeUp {
