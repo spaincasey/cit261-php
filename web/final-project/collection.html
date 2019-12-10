@@ -87,9 +87,21 @@
                     <p><strong>Plot:</strong> ${plot}</p>
                     <p><strong>Rating:</strong> ${rating}</p>
                     <p><strong>Runtime:</strong> ${runtime}</p>
-                    <p><strong>imdb Rating:</strong> ${imdbRate}</p>
-                    <button class='button2' onclick='removeFavorite("${title}");'>Remove From Collection</button></div>`;
+                    <p><strong>imdb Rating:</strong> ${imdbRate}</p></div>
+                    <button class='button2' onclick='removeFavorite("${title}");'>Remove From Collection</button>`;
         resultList.innerHTML = content;
+    }
+
+    function removeFavorite(name) {
+        for (var i = 0; i < localStorage.length; i++){
+            var key = localStorage.key(i);
+            var value = localStorage[key];
+            if(value == name)
+            {
+                localStorage.removeItem(key);
+            }
+            // loadItem(value);
+        }
     }
     </script>
 </head>
