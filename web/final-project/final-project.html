@@ -31,7 +31,7 @@
                 var data = this.response;
                 // console.log(data);
                 console.log(JSON.parse(data));
-                updateResultList(data);
+                updateResultList(data.json());
             }
 	  	};
         xhttp.open("GET", url, true);
