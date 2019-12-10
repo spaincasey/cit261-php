@@ -49,19 +49,19 @@
 
         // you could use a forEach here as well...it would change the following line like this:
         data.Search.forEach(function(item){
-            // console.log(item);
-            const title2 = item.Title; 
-            console.log(title2);
-            // const content2 = `<li><p>${title2}</p></li>`;
-            // resultList.innerHTML += content;
-         })
-        for (let i = 0; i < data.Search.length; i++) {
-        const title = data.Search[i].Title;
+            const title = item.Title;
 
-        console.log('Adding: ' + title);
-        const content = `<li><p>${title}</p></li>`;
-        resultList.innerHTML += content;
-        }
+            console.log('Adding: ' + title);
+            const content = `<li><p>${title}</p></li>`;
+            resultList.innerHTML += content;
+         })
+        // for (let i = 0; i < data.Search.length; i++) {
+        // const title = data.Search[i].Title;
+
+        // console.log('Adding: ' + title);
+        // const content = `<li><p>${title}</p></li>`;
+        // resultList.innerHTML += content;
+        // }
     }
     }
 
