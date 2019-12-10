@@ -21,8 +21,6 @@ h2, h3 {
 
 
 .button1 {
-    width: 80%;
-    height: 100%;
     background: #3D74AE;
     transition: width 1s;
     -webkit-transition: width 1s; 
