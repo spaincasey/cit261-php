@@ -36,8 +36,7 @@
                 // const content = `<li><p>${title}</p></li>`;
                 // resultList.innerHTML += content;
                 console.log(item);
-                if(item.Poster)
-                {
+                if(item.Poster != 'N/A'){
                     const poster = item.Poster;
                     const content2 = `<img onclick='searchItem("${title}");' class='thumbnail' src='${poster}' alt='${title}'/>`;
                     resultList.innerHTML += content2;
