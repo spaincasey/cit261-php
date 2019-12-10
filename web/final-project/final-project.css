@@ -1,12 +1,12 @@
 body {
-    background-color: #373438;
+    background-color: #AAABBC;
     padding: 0%;
     margin: 0%;
 }
 
 h1 {
     text-align: center;
-    color: #FFE81F;
+    color: #6C91C2;
     font-size: 10vh;
     -ms-transform: skewY(-5deg); /* IE 9 */
     -webkit-transform: skewY(-5deg); /* Safari 3-8 */
@@ -15,13 +15,13 @@ h1 {
 
 h2 {
     text-align: center;
-    color: #FFE81F;
+    color: #6C91C2;
     font-size: 5vh;
 }
 
 h3 {
     text-align: center;
-    color: #FFE81F;
+    color: #6C91C2;
     font-size: 5vh;
 }
 
