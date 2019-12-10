@@ -6,20 +6,21 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="final-project.css"/>
     <script type="text/javascript">
-        function updateResultList(data) {
-        if (data.Search && data.Search.length > 0) {
-            const resultList = document.getElementById('divResults');
-            const title = data.Title;
-            console.log(title);
-            const poster = data.Poster;
-            console.log(poster);
-            const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
-            resultList.innerHTML += content2;
+    function loadCollection() {
+        const resultList = document.getElementById('divResults');
+        resultList.innerHTML = '';
+        for (var i = 0; i < localStorage.length; i++){
+            var key = localStorage.key(i);
+            var value = localStorage[key];
+            console.log("The Key is: " + key);
+            console.log("The Value is: " + value);
+            loadItem(value);
         }
     }
-    
+
     function loadItem(name) {
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
+        console.log(url);
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
@@ -31,15 +32,15 @@
         };
     }
 
-    function loadCollection() {
-        const resultList = document.getElementById('divResults');
-        resultList.innerHTML = '';
-        for (var i = 0; i < localStorage.length; i++){
-            var key = localStorage.key(i);
-            var value = localStorage[key];
-            console.log("The Key is: " + key);
-            console.log("The Value is: " + value);
-            loadItem(value);
+    function updateResultList(data) {
+        if (data.Search && data.Search.length > 0) {
+            const resultList = document.getElementById('divResults');
+            const title = data.Title;
+            console.log(title);
+            const poster = data.Poster;
+            console.log(poster);
+            const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
+            resultList.innerHTML += content2;
         }
     }
     
