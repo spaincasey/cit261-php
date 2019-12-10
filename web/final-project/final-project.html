@@ -28,10 +28,10 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
-                var data = this.response;
+                var data = this.response.json();
                 // console.log(data);
                 console.log(JSON.parse(data));
-                updateResultList(data.json());
+                updateResultList(data);
             }
 	  	};
         xhttp.open("GET", url, true);
