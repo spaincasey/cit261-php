@@ -29,7 +29,7 @@
         if (data.Search && data.Search.length > 0) {
             const resultList = document.getElementById('divResults');
             resultList.innerHTML = '';
-            // you could use a forEach here as well...it would change the following line like this:
+
             data.Search.forEach(function(item){
                 const title = item.Title;
                 // console.log('Adding: ' + title);
@@ -98,6 +98,12 @@
 
     function addFavorite(name) {
         console.log(name);
+        for (var i = 0; i < localStorage.length; i++){
+            var key = localStorage.key(i);
+            if(name == key) {
+                alert("This movie is already in your collection");
+            }
+        }
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
