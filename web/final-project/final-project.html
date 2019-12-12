@@ -39,11 +39,11 @@
                 if(item.Poster != 'N/A'){
                     const poster = item.Poster;
                     var image = document.createElement('img');
-                    image.setAttribute("onClick", "searchItem(" + title + ")");
-                    image.setAttribute("class", "thumbnail");
-                    image.setAttribute("src", poster);
-                    image.setAttribute("alt", title);
-                    image.classList.add("moveUp");
+                    image.setAttribute('onClick', 'searchItem(' + title + ')');
+                    // image.setAttribute("class", "thumbnail");
+                    // image.setAttribute("src", poster);
+                    // image.setAttribute("alt", title);
+                    // image.classList.add("moveUp");
                     const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
                     resultList.innerHTML += image;
                 }
