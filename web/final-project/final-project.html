@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Casey Spain's Assign09</title>
+	<title>Movie Search</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="final-project.css"/>
@@ -38,8 +38,13 @@
                 console.log(item);
                 if(item.Poster != 'N/A'){
                     const poster = item.Poster;
+                    var image = document.createElement("img");
+                    image.setAttribute("onClick", "searchItem(" + title + ")");
+                    image.setAttribute("class", "thumbnail moveUp");
+                    image.setAttribute("src", poster);
+                    image.setAttribute("alt", title);
                     const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
-                    resultList.innerHTML += content2;
+                    resultList.innerHTML += image;
                 }
             })
         }
