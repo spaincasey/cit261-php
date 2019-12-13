@@ -109,14 +109,15 @@
         image.setAttribute("class", "selected");
         image.setAttribute("src", poster);
         image.setAttribute("alt", title);
-        image.classList.add("moveUp");
         resultList.appendChild(image);
         var title = document.createElement('h3');
         title.innerText= data.Title;
         resultList.appendChild(title);
+        var div = document.createElement('div');
+        div.setAttribute("class", "details");
         var actors = document.createElement('p');
-        actors.innerText = data.Actors;
-        resultList.appendChild(actors);
+        actors.innerText = "<strong>Actors: </strong>" + data.Actors;
+        div.appendChild(actors);
         // content = `<img class='selected' src='${poster}' alt='${title}'/><br>
         //             <h3>${title}</h3>
         //             <div class='details'><p><strong>Year:</strong> ${year}</p>
