@@ -96,15 +96,15 @@
         console.log(data);
         const resultList = document.getElementById('divResults');
         resultList.innerHTML = '';
-        poster = data.Poster;
-        title = data.Title;
-        year = data.Year;
-        actors = data.Actors;
-        director = data.Director;
-        plot = data.Plot;
-        rating = data.Rating;
-        runtime = data.Runtime;
-        imdbRate = data.imdbRating;
+        // poster = data.Poster;
+        // title = data.Title;
+        // year = data.Year;
+        // actors = data.Actors;
+        // director = data.Director;
+        // plot = data.Plot;
+        // rating = data.Rating;
+        // runtime = data.Runtime;
+        // imdbRate = data.imdbRating;
         var image = document.createElement('img');
         image.setAttribute("class", "selected");
         image.setAttribute("src", poster);
@@ -118,7 +118,27 @@
         var actors = document.createElement('p');
         actors.innerHTML = "<strong>Actors: </strong>" + data.Actors;
         div.appendChild(actors);
+        var director = document.createElement('p');
+        director.innerHTML = "<strong>Director: </strong>" + data.Director;
+        div.appendChild(director);
+        var plot = document.createElement('p');
+        plot.innerHTML = "<strong>Plot: </strong>" + data.Plot;
+        div.appendChild(plot);
+        var rating = document.createElement('p');
+        rating.innerHTML = "<strong>Rating: </strong>" + data.Rating;
+        div.appendChild(rating);
+        var runtime = document.createElement('p');
+        runtime.innerHTML = "<strong>Runtime: </strong>" + data.Runtime;
+        div.appendChild(runtime);
+        var imdbRate = document.createElement('p');
+        imdbRate.innerHTML = "<strong>imdb Rating: </strong>" + data.imdbRating;
+        div.appendChild(imdbRate);
         resultList.appendChild(div);
+        var btn = document.createElement("button");
+        btn.setAttribute("class", "button2");
+        btn.setAttribute("onclick", "addFavorite('" + data.Title + "')");
+        btn.setAttribute("value", "Add To Collection");
+        resultList.appendChild(btn);
         // content = `<img class='selected' src='${poster}' alt='${title}'/><br>
         //             <h3>${title}</h3>
         //             <div class='details'><p><strong>Year:</strong> ${year}</p>
