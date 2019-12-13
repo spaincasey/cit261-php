@@ -116,7 +116,7 @@
         var div = document.createElement('div');
         div.setAttribute("class", "details");
         var actors = document.createElement('p');
-        actors.innerText = <strong> + "Actors: " +  </strong> + data.Actors;
+        actors.innerHTML = "<strong>Actors: </strong>" + data.Actors;
         div.appendChild(actors);
         resultList.appendChild(div);
         // content = `<img class='selected' src='${poster}' alt='${title}'/><br>
