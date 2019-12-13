@@ -1,5 +1,5 @@
 body {
-    background-color: #9BA0A8;
+    background-color: #333;
     padding: 0%;
     margin: 0%;
 }
@@ -15,7 +15,7 @@ h1 {
 
 h2, h3 {
     text-align: center;
-    color: #373F47;
+    color: #f2f2f2;
     font-size: 5vh;
 }
 
@@ -82,7 +82,7 @@ h2, h3 {
     margin-right: auto;
     width: 100%;
     text-align: center;
-    background-color: #9BA0A8;
+    background-color: #333;
 }
 
 .header {
@@ -101,7 +101,7 @@ h2, h3 {
     margin-bottom: 300px;
     width: 90%;
     text-align: center;
-    background-color: #9BA0A8;
+    background-color: #333;
     padding: 3vh;
 }
 
@@ -111,7 +111,7 @@ h2, h3 {
     margin-right: auto;
     width: 70%;
     text-align: left;
-    background-color: #9BA0A8;
+    background-color: #333;
     padding: 3vh;
     padding-bottom: 0px;
 }
