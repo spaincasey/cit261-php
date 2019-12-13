@@ -10,7 +10,6 @@ p {
 
 h1 {
     text-align: center;
-    color: #373F47;
     font-size: 10vh;
     animation: tilt 2s infinite;
     animation-direction: alternate;
@@ -21,11 +20,13 @@ h1 {
         -ms-transform: skewY(5deg); /* IE 9 */
         -webkit-transform: skewY(5deg); /* Safari 3-8 */
         transform: skewY(5deg);
+        color: #F8FFE5;
     }
     100% {
         -ms-transform: skewY(-5deg); /* IE 9 */
         -webkit-transform: skewY(-5deg); /* Safari 3-8 */
         transform: skewY(-5deg);
+        color: #FFC43D;
     }
 }
 
