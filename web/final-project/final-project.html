@@ -137,7 +137,8 @@
         var btn = document.createElement("button");
         btn.setAttribute("class", "button2");
         btn.setAttribute("onclick", "addFavorite('" + data.Title + "')");
-        btn.setAttribute("value", "Add To Collection");
+        btn.value = "Add To Collection";
+        // btn.setAttribute("value", "Add To Collection");
         resultList.appendChild(btn);
         // content = `<img class='selected' src='${poster}' alt='${title}'/><br>
         //             <h3>${title}</h3>
