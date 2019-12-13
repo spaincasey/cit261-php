@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="final-project.css"/>
+    <script src='./config.js'></script>
     <script type="text/javascript">
     /*****************************************************************************************
     Function: search()
@@ -16,6 +17,8 @@
         var searchString = document.getElementById('txtSearch').value;
         console.log('Searching for: ' + searchString);
         /* build the url */
+        var key = config.apiKey;
+        console.log(key);
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&s=' + encodeURIComponent(searchString);
         /* AJAX GET REQUEST */
         var xhttp = new XMLHttpRequest();
