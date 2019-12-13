@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="final-project.css"/>
-    <script src='config.js'></script>
     <script type="text/javascript">
     /*****************************************************************************************
     Function: search()
@@ -17,8 +16,6 @@
         var searchString = document.getElementById('txtSearch').value;
         console.log('Searching for: ' + searchString);
         /* build the url */
-        var key = config.apiKey;
-        console.log(key);
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&s=' + encodeURIComponent(searchString);
         /* AJAX GET REQUEST */
         var xhttp = new XMLHttpRequest();
@@ -108,16 +105,28 @@
         rating = data.Rating;
         runtime = data.Runtime;
         imdbRate = data.imdbRating;
-        content = `<img class='selected' src='${poster}' alt='${title}'/><br>
-                    <h3>${title}</h3>
-                    <div class='details'><p><strong>Year:</strong> ${year}</p>
-                    <p><strong>Actors:</strong> ${actors}</p>
-                    <p><strong>Director:</strong> ${director}</p>
-                    <p><strong>Plot:</strong> ${plot}</p>
-                    <p><strong>Rating:</strong> ${rating}</p>
-                    <p><strong>Runtime:</strong> ${runtime}</p>
-                    <p><strong>imdb Rating:</strong> ${imdbRate}</p></div>
-                    <button class='button2' onclick='addFavorite("${title}");'>Add To Collection</button>`;
+        var image = document.createElement('img');
+        image.setAttribute("class", "selected");
+        image.setAttribute("src", poster);
+        image.setAttribute("alt", title);
+        image.classList.add("moveUp");
+        resultList.appendChild(image);
+        var title = document.createElement('h3');
+        title.innerText(data.Title);
+        resultList.appendChild(title);
+        var actors = document.createElement('p');
+        actors.innerText(data.Actors);
+        resultList.appendChild(actors);
+        // content = `<img class='selected' src='${poster}' alt='${title}'/><br>
+        //             <h3>${title}</h3>
+        //             <div class='details'><p><strong>Year:</strong> ${year}</p>
+        //             <p><strong>Actors:</strong> ${actors}</p>
+        //             <p><strong>Director:</strong> ${director}</p>
+        //             <p><strong>Plot:</strong> ${plot}</p>
+        //             <p><strong>Rating:</strong> ${rating}</p>
+        //             <p><strong>Runtime:</strong> ${runtime}</p>
+        //             <p><strong>imdb Rating:</strong> ${imdbRate}</p></div>
+        //             <button class='button2' onclick='addFavorite("${title}");'>Add To Collection</button>`;
         resultList.innerHTML = content;
     }
 
