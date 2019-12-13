@@ -13,7 +13,7 @@ h1 {
     color: #373F47;
     font-size: 10vh;
     animation: shake 2s infinite;
-    /* animation-direction: alternate; */
+    animation-direction: alternate;
 }
 
 @keyframes shake {
