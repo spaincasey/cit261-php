@@ -107,8 +107,8 @@
         // imdbRate = data.imdbRating;
         var image = document.createElement('img');
         image.setAttribute("class", "selected");
-        image.setAttribute("src", poster);
-        image.setAttribute("alt", title);
+        image.setAttribute("src", data.Poster);
+        image.setAttribute("alt", data.Title);
         resultList.appendChild(image);
         var title = document.createElement('h3');
         title.innerText= data.Title;
