@@ -6,11 +6,18 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="final-project.css"/>
     <script type="text/javascript">
+    /*****************************************************************************************
+    Function: search()
+    This function takes in the user input, builds the url and does a GET request with that url. 
+    It then calls the updateResultList() function to load the data into the HTML 
+    *****************************************************************************************/
     function search() {
-        // Get the value from the search box
+        /* Get the value from the search box */
         var searchString = document.getElementById('txtSearch').value;
         console.log('Searching for: ' + searchString);
+        /* build the url */
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&s=' + encodeURIComponent(searchString);
+        /* AJAX GET REQUEST */
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
 	    	if (this.readyState == 4 && this.status == 200) {
@@ -25,6 +32,11 @@
         xhttp.send();
     }
 
+    /*****************************************************************************************
+    Function: updateResultList()
+    This function retrieves the data from the search function and formats it into HTML by 
+    creating a thumbnail of each movie poster.
+    *****************************************************************************************/
     function updateResultList(data) {
         if (data.Search && data.Search.length > 0) {
             const resultList = document.getElementById('divResults');
@@ -52,6 +64,11 @@
         }
     }
 
+    /*****************************************************************************************
+    Function: searchItem()
+    This function takes in the name of the name of the movie that the user clicked on and does 
+    a GET request for that movie and then calls the singleItem function.
+    *****************************************************************************************/
     function searchItem(name) {
         console.log(name);
         var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
@@ -69,6 +86,11 @@
         xhttp.send();
     }
 
+    /*****************************************************************************************
+    Function: searchItem()
+    This function takes in the name of the data about the selected movie and formats it into 
+    the HTML.
+    *****************************************************************************************/
     function singleItem(data) {
         console.log("Single Item: ");
         console.log(data);
@@ -96,6 +118,12 @@
         resultList.innerHTML = content;
     }
 
+    /*****************************************************************************************
+    Function: searchItem()
+    This function takes in the name of the movie that the user wishes to add to their collection,
+    loops through the local storage to check if the movie is already in the collection, and either
+    adds the title to the local storage or alerts the user that it's already in their collection.
+    *****************************************************************************************/
     function addFavorite(name) {
         console.log(name);
         var found = false;
