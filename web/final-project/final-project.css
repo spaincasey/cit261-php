@@ -129,8 +129,8 @@ h1 {
 
 /*ANIMATION 3: */
 @keyframes shrink {
-    0%   {-webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(100px);}
-    100% {-webkit-transform: rotate(0deg) scale(2) skew(0deg) translate(100px);}
+    0%   {-webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);}
+    100% {-webkit-transform: rotate(0deg) scale(2) skew(0deg) translate(0px);}
 }
 
 .clicked {
