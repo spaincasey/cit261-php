@@ -169,7 +169,7 @@ h1 {
     background: #3D74AE;
     width: 140px;
     transition: all 1s;
-    -webkit-transition: width 1s, background 1s; 
+    -webkit-transition: all 1s; 
 }
 
 .button2:hover {
