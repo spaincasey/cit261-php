@@ -182,18 +182,12 @@ h1 {
     margin: 5px;
     width: 28%; 
     opacity: 100%;
-    transition: width 1s ;
-    -webkit-transition: width 1s; 
-    transition: opacity 2s ease-in-out;
-    -webkit-transition: opacity 2s ease-in-out; 
+    transition: width 1s, opacity 1s;
+    -webkit-transition: width 1s, opacity 1s; 
 }
 .thumbnail:hover {
     width: 31%;
     opacity: 10%;
-    transition: width 1s;
-    -webkit-transition: width 1s; 
-    transition: opacity 2s ease-in-out;
-    -webkit-transition: opacity 2s ease-in-out; 
 }
 
 /*********************************************************************************
