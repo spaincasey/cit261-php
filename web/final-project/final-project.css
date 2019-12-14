@@ -188,7 +188,8 @@ h1 {
 .thumbnail:hover {
     width: 31%;
     opacity: 50%;
-    transition: opacity 2s;
+    transition: opacity 0.5s;
+    transition: width 1s;
 }
 
 /*********************************************************************************
