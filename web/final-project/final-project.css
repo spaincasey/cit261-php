@@ -189,9 +189,11 @@ h1 {
 }
 .thumbnail:hover {
     width: 31%;
-    opacity: 50%;
+    opacity: 10%;
     transition: width 1s;
     -webkit-transition: width 1s; 
+    transition: opacity 2s ease-in-out;
+    -webkit-transition: opacity 2s ease-in-out; 
 }
 
 /*********************************************************************************
