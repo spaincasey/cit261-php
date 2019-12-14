@@ -50,20 +50,19 @@
         clicked.classList.add("clicked");
         console.log(name);
         setTimeout(function(){ 
-            console.log(name);
-            var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var data = this.response;
-                    parsed = JSON.parse(data);
-                    // console.log(data);
-                    console.log(JSON.parse(data));
-                    singleItem(parsed);
-                }
-            };
-            xhttp.open("GET", url, true);
-            xhttp.send();
+        var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var data = this.response;
+                parsed = JSON.parse(data);
+                // console.log(data);
+                console.log(JSON.parse(data));
+                singleItem(parsed);
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
         }, 900);
     }
 
