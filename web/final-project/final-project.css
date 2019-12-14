@@ -127,18 +127,20 @@ h1 {
     animation-duration: 3s;
 }
 
-/*ANIMATION 3: */
-@keyframes shrink {
+/*ANIMATION 3: rotates and enlarges the item */
+@keyframes blowUp {
     0%   {
-        -webkit-transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1) ;
+        opacity: 100%;
     }
     100% {
         -webkit-transform: rotate(360deg) scale(2);
+        opacity: 0%;
     }
 }
 
 .clicked {
-    animation-name: shrink;
+    animation-name: blowUp;
     animation-duration: 1s;
 }
 
