@@ -130,11 +130,16 @@ h1 {
 /*ANIMATION 3: rotates and enlarges the item while decreasing the opacity to zero*/
 @keyframes blowUp {
     0%   {
-        -webkit-transform: rotate(0deg) scale(1) ;
+        /*Transform 3: rotates the object 360 degrees and changes the scale from 1 to 2*/
+        -ms-transform: rotate(0deg) scale(1); /* IE 9 */
+        -webkit-transform: rotate(0deg) scale(1); /* Safari 3-8 */
+        transform: rotate(0deg) scale(1);
         opacity: 100%;
     }
     100% {
-        -webkit-transform: rotate(360deg) scale(2);
+        -ms-transform: rotate(360deg) scale(2); /* IE 9 */
+        -webkit-transform: rotate(360deg) scale(2); /* Safari 3-8 */
+        transform: rotate(360deg) scale(2);
         opacity: 0%;
     }
 }
