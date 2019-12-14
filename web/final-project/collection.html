@@ -92,7 +92,8 @@
                     <p><strong>Rating:</strong> ${rating}</p>
                     <p><strong>Runtime:</strong> ${runtime}</p>
                     <p><strong>imdb Rating:</strong> ${imdbRate}</p></div>
-                    <button class='button2' onclick='removeFavorite("${title}");'>Remove From Collection</button>`;
+                    <button class='button2' onclick='removeFavorite("${title}");'>Remove From Collection</button>
+                    <button class='button2' onclick='loadCollection();'>Back to Collection</button>`;
         resultList.innerHTML = content;
     }
 
