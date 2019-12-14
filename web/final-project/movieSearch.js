@@ -66,6 +66,7 @@ function searchItem(name) {
     clicked = document.getElementById(name);
     clicked.setAttribute("class", clicked);
     console.log(name);
+    setTimeout(function(){ 
     var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -79,6 +80,7 @@ function searchItem(name) {
       };
     xhttp.open("GET", url, true);
     xhttp.send();
+    }, 3000);
 }
 
 /*****************************************************************************************
