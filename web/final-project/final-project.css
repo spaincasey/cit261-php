@@ -12,6 +12,7 @@ h2, h3 {
     text-align: center;
     color: #f2f2f2;
     font-size: 5vh;
+    transform: rotate(5deg);
 }
 
 .topnav {
