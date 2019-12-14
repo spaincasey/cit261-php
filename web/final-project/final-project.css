@@ -129,8 +129,8 @@ h1 {
 
 /*ANIMATION 3: */
 @keyframes blowUp {
-    0%   {width: 100px;}
-    100% {width: 2000px;}
+    0%   {width: auto;}
+    100% {width: 500%;}
 }
 
 .clicked {
