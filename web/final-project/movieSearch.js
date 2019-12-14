@@ -64,7 +64,7 @@ a GET request for that movie and then calls the singleItem function.
 *****************************************************************************************/
 function searchItem(name) {
     clicked = document.getElementById(name);
-    clicked.classList.add(clicked);
+    clicked.classList.add("clicked");
     console.log(name);
     setTimeout(function(){ 
     var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
