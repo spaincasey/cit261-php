@@ -162,7 +162,7 @@ h1 {
   
 .button1:hover {
     width: 65px;
-    background: red;
+    background: #FFC43D;
 }
 
 /*TRANSITION 2: changes the width from 140px to 150px on hover*/
@@ -171,7 +171,7 @@ h1 {
     width: 140px;
     transition: width 1s;
     -webkit-transition: width 1s; 
-    background: red;
+    background: #FFC43D;
 }
 
 .button2:hover {
@@ -187,7 +187,7 @@ h1 {
 }
 .thumbnail:hover {
     width: 31%;
-    background: red;
+    background: #FFC43D;
 }
 
 /*********************************************************************************
