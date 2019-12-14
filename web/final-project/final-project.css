@@ -182,8 +182,8 @@ h1 {
     margin: 5px;
     width: 28%; 
     opacity: 100%;
-    transition: width 1s, opacity 1s;
-    -webkit-transition: width 1s, opacity 1s; 
+    transition: width 1s, opacity 1s ease-in-out;
+    -webkit-transition: width 1s, opacity 1s ease-in-out; 
 }
 .thumbnail:hover {
     width: 31%;
@@ -197,8 +197,8 @@ h1 {
     /*TRANSITION: same transition but modified for mobile*/
     .thumbnail {
         width: 17%; 
-        transition: width 1s;
-        -webkit-transition: width 1s; 
+        transition: width 1s, opacity 1s ease-in-out;
+        -webkit-transition: width 1s, opacity 1s ease-in-out; 
     }
     .thumbnail:hover {
         width: 19%;
