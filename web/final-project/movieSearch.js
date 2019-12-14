@@ -43,6 +43,7 @@ function updateResultList(data) {
             if(item.Poster != 'N/A'){
                 const poster = item.Poster;
                 var image = document.createElement('img');
+                image.setAttribute("id", title);
                 image.setAttribute("onClick", "searchItem('" + title + "')");
                 image.setAttribute("class", "thumbnail");
                 image.setAttribute("src", poster);
@@ -62,6 +63,8 @@ This function takes in the name of the name of the movie that the user clicked o
 a GET request for that movie and then calls the singleItem function.
 *****************************************************************************************/
 function searchItem(name) {
+    clicked = document.getElementById(name);
+    clicked.setAttribute("class", clicked);
     console.log(name);
     var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
     var xhttp = new XMLHttpRequest();
