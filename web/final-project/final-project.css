@@ -168,8 +168,8 @@ h1 {
 .button2{
     background: #3D74AE;
     width: 140px;
-    transition: width 1s;
-    -webkit-transition: width 1s; 
+    transition: width 1s, background 1s;
+    -webkit-transition: width 1s, background 1s; 
 }
 
 .button2:hover {
@@ -177,7 +177,7 @@ h1 {
     background: #FFC43D;
 }
 
-/*TRANSITION 3: changes the width of the thumbnail images from 28% to 31% on hover*/
+/*TRANSITION 3: changes the opacity from 100% to 50% on hover and width of the thumbnail images from 28% to 31%*/
 .thumbnail {
     margin: 5px;
     width: 28%; 
