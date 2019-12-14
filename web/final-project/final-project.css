@@ -135,7 +135,7 @@ h1 {
 
 .clicked {
     animation-name: shrink;
-    animation-duration: 3s;
+    animation-duration: 1s;
 }
 
 /*********************************************************************************
