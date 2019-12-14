@@ -14,18 +14,16 @@ p {
   }
   
 .topnav a {
-    background-color: #333;
     float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    transition: background-color: 0.5s;
 }
 
 .topnav a:hover {
-    background-color: #FFC43D;
+    background-color: #9BA0A8;
     color: black;
 }
 
