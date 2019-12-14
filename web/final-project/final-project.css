@@ -135,7 +135,7 @@ h1 {
 
 .clicked {
     animation-name: blowUp;
-    animation-duration: 1s;
+    animation-duration: 2s;
 }
 
 /*********************************************************************************
