@@ -182,25 +182,27 @@ h1 {
     margin: 5px;
     width: 28%; 
     opacity: 100%;
-    transition: width 1s, opacity 1s ease-in-out;
-    -webkit-transition: width 1s, opacity 1s ease-in-out; 
+    transition: width 1s, opacity 0.5s ease-in-out;
+    -webkit-transition: width 1s, opacity 0.5s ease-in-out; 
 }
 .thumbnail:hover {
     width: 31%;
-    opacity: 10%;
+    opacity: 65%;
 }
 
 /*********************************************************************************
-* MOBILE SPECIFIC CSS
+* FULL SCREEN ONLY CSS
 **********************************************************************************/
 @media only screen and (min-device-width: 400px) {
-    /*TRANSITION: same transition but modified for mobile*/
+    /*TRANSITION: same transition but modified for fullscreen*/
     .thumbnail {
         width: 17%; 
-        transition: width 1s, opacity 1s ease-in-out;
-        -webkit-transition: width 1s, opacity 1s ease-in-out; 
+        opacity: 100%;
+        transition: width 1s, opacity 0.5s ease-in-out;
+        -webkit-transition: width 1s, opacity 0.5s ease-in-out; 
     }
     .thumbnail:hover {
         width: 19%;
+        opacity: 65%;
     }
 }
