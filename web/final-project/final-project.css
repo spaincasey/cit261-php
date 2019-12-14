@@ -181,8 +181,9 @@ h1 {
 .thumbnail {
     margin: 5px;
     width: 28%; 
-    transition: width 1s;
-    -webkit-transition: width 1s; 
+    opacity: 100%;
+    transition: width opacity 1s;
+    -webkit-transition: width opacity 1s; 
 }
 .thumbnail:hover {
     width: 31%;
