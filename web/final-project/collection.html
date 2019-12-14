@@ -41,7 +41,7 @@
         console.log(title);
         const poster = data.Poster;
         console.log(poster);
-        const content2 = `<img onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
+        const content2 = `<img id='${title}' onclick='searchItem("${title}");' class='thumbnail moveUp' src='${poster}' alt='${title}'/>`;
         resultList.innerHTML += content2;
     }
     
