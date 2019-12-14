@@ -127,7 +127,7 @@ h1 {
     animation-duration: 3s;
 }
 
-/*ANIMATION 3: rotates and enlarges the item */
+/*ANIMATION 3: rotates and enlarges the item while decreasing the opacity to zero*/
 @keyframes blowUp {
     0%   {
         -webkit-transform: rotate(0deg) scale(1) ;
