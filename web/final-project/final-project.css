@@ -8,65 +8,10 @@ p {
     color: #f2f2f2;
 }
 
-h1 {
-    text-align: center;
-    font-size: 10vh;
-    animation: tilt 2s infinite;
-    animation-direction: alternate;
-}
-
-@keyframes tilt {
-    0% {
-        -ms-transform: skewY(5deg); /* IE 9 */
-        -webkit-transform: skewY(5deg); /* Safari 3-8 */
-        transform: skewY(5deg);
-        color: #F8FFE5;
-    }
-    100% {
-        -ms-transform: skewY(-5deg); /* IE 9 */
-        -webkit-transform: skewY(-5deg); /* Safari 3-8 */
-        transform: skewY(-5deg);
-        color: #FFC43D;
-    }
-}
-
 h2, h3 {
     text-align: center;
     color: #f2f2f2;
     font-size: 5vh;
-}
-
-.button1{
-    background: #3D74AE;
-    width: 55px;
-    transition: width 1s;
-    -webkit-transition: width 1s; 
-}
-  
-.button1:hover {
-    width: 65px;
-}
-
-.button2{
-    background: #3D74AE;
-    width: 140px;
-    transition: width 1s;
-    -webkit-transition: width 1s; 
-}
-
-.button2:hover {
-    width: 150px;
-}
-
-@keyframes fadeUp {
-    0%   {left: 0px; top:200px;}
-    100% {left: 0px; top:0px;}
-}
-
-.moveUp {
-    position: relative;
-    animation-name: fadeUp;
-    animation-duration: 3s;
 }
 
 .topnav {
@@ -133,6 +78,78 @@ h2, h3 {
     padding-bottom: 0px;
 }
 
+.selected {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*********************************************************************************
+* ANIMATIONS
+**********************************************************************************/
+/*ANIMATION 1: skews the y axis from 5 degrees to -5 degrees*/
+@keyframes tilt {
+    0% {
+        -ms-transform: skewY(5deg); /* IE 9 */
+        -webkit-transform: skewY(5deg); /* Safari 3-8 */
+        transform: skewY(5deg);
+        color: #F8FFE5;
+    }
+    100% {
+        -ms-transform: skewY(-5deg); /* IE 9 */
+        -webkit-transform: skewY(-5deg); /* Safari 3-8 */
+        transform: skewY(-5deg);
+        color: #FFC43D;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 10vh;
+    animation: tilt 2s infinite;
+    animation-direction: alternate;
+}
+
+/*ANIMATION 2: Starts 200px low and moves to regular position*/
+@keyframes fadeUp {
+    0%   {left: 0px; top:200px;}
+    100% {left: 0px; top:0px;}
+}
+
+.moveUp {
+    position: relative;
+    animation-name: fadeUp;
+    animation-duration: 3s;
+}
+
+/*********************************************************************************
+* TRANSITIONS
+**********************************************************************************/
+/*TRANSITION 1: changes the width from 55px to 65px on hover*/
+.button1{
+    background: #3D74AE;
+    width: 55px;
+    transition: width 1s;
+    -webkit-transition: width 1s; 
+}
+  
+.button1:hover {
+    width: 65px;
+}
+
+/*TRANSITION 2: changes the width from 140px to 150px on hover*/
+.button2{
+    background: #3D74AE;
+    width: 140px;
+    transition: width 1s;
+    -webkit-transition: width 1s; 
+}
+
+.button2:hover {
+    width: 150px;
+}
+
+/*TRANSITION 3: changes the width of the thumbnail images from 28% to 31% on hover*/
 .thumbnail {
     margin: 5px;
     width: 28%; 
@@ -143,13 +160,11 @@ h2, h3 {
     width: 31%;
 }
 
-.selected {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/*********************************************************************************
+* MOBILE SPECIFIC CSS
+**********************************************************************************/
 @media only screen and (min-device-width: 400px) {
+    /*TRANSITION: same transition but modified for mobile*/
     .thumbnail {
         width: 17%; 
         transition: width 1s;
