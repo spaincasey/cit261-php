@@ -152,16 +152,17 @@ h1 {
 /*********************************************************************************
 * TRANSITIONS
 **********************************************************************************/
-/*TRANSITION 1: changes the width from 55px to 65px on hover*/
+/*TRANSITION 1: changes the color from blue to yellow and the width from 55px to 65px on hover*/
 .button1{
     background: #3D74AE;
     width: 55px;
-    transition: width 1s;
-    -webkit-transition: width 1s; 
+    transition: all 1s;
+    -webkit-transition: all 1s; 
 }
   
 .button1:hover {
     width: 65px;
+    background: #FFC43D;
 }
 
 /*TRANSITION 2: changes the color from blue to yellow and the width from 140px to 150px on hover*/
