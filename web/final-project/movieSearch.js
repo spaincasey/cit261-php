@@ -65,20 +65,30 @@ a GET request for that movie and then calls the singleItem function.
 function searchItem(name) {
     clicked = document.getElementById(name);
     clicked.setAttribute("class", clicked);
-    console.log(name);
-    var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = this.response;
-            parsed = JSON.parse(data);
-            // console.log(data);
-            console.log(JSON.parse(data));
-            singleItem(parsed);
+    Promise.all(
+        clicked.getAnimations().map( 
+          function(animation) { 
+            return animation.finished 
+          }
+        )
+      ).then(
+        function() {
+            console.log(name);
+            var url = 'https://www.omdbapi.com/?i=tt3896198&apikey=5797b0b&t=' + name;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = this.response;
+                    parsed = JSON.parse(data);
+                    // console.log(data);
+                    console.log(JSON.parse(data));
+                    singleItem(parsed);
+                }
+              };
+            xhttp.open("GET", url, true);
+            xhttp.send();
         }
-      };
-    xhttp.open("GET", url, true);
-    xhttp.send();
+    );
 }
 
 /*****************************************************************************************
